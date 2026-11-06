@@ -31,10 +31,16 @@
 #define CHAIN_OFFSET  0x40000u
 
 /* The xnusys region in super's free tail (tools/xnusys.py plan, 2026-11-04). */
-#define XNUSYS_LBA      12216320ULL
-#define XNUSYS_SECTORS  8075264ULL
+#ifndef XNUSYS_LBA_DEC
+#define XNUSYS_LBA_DEC 12216320
+#endif
+#ifndef XNUSYS_IMAGE_SECTORS
+#define XNUSYS_IMAGE_SECTORS 7944192
+#endif
+#define XNUSYS_LBA      ((uint64_t)XNUSYS_LBA_DEC)
 /* ... whose last 64 MiB hold the XNU payload (kernel + RAM disk, tools/xnusys.py payload) */
 #define PAYLOAD_SECTORS 131072ULL
+#define XNUSYS_SECTORS  ((uint64_t)XNUSYS_IMAGE_SECTORS + PAYLOAD_SECTORS)
 #define PAYLOAD_LBA     (XNUSYS_LBA + XNUSYS_SECTORS - PAYLOAD_SECTORS)
 
 /*
@@ -110,8 +116,6 @@
 #ifndef XNU_EMMC_ROOT
 #define XNU_EMMC_ROOT       0
 #endif
-#define XNUSYS_LBA_DEC      12216320    /* XNUSYS_LBA, without its ULL: for STR() */
-#define XNUSYS_IMAGE_SECTORS 7944192     /* 8075264 - 131072: a literal, for STR() */
 #ifndef XNU_WDT_RUN
 #define XNU_WDT_RUN 2700
 #endif

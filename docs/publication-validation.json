@@ -1,0 +1,108 @@
+{
+  "date": "2026-11-06",
+  "tests": [
+    {
+      "test": "touch-startup",
+      "returncode": 0
+    },
+    {
+      "test": "touch-read",
+      "returncode": 0
+    },
+    {
+      "test": "touch-transport",
+      "returncode": 0
+    },
+    {
+      "test": "touch-power",
+      "returncode": 0
+    },
+    {
+      "test": "touch-app-info",
+      "returncode": 0
+    },
+    {
+      "test": "touch-report-bounds",
+      "returncode": 0
+    },
+    {
+      "test": "touch-firmware-status",
+      "returncode": 0
+    },
+    {
+      "test": "touch-recovery",
+      "returncode": 0
+    },
+    {
+      "test": "touch-queue",
+      "returncode": 0
+    },
+    {
+      "test": "display-cache",
+      "returncode": 0
+    },
+    {
+      "test": "native-status",
+      "returncode": 0
+    },
+    {
+      "test": "native-keyboard",
+      "returncode": 0
+    },
+    {
+      "test": "native-wallpaper",
+      "returncode": 0
+    },
+    {
+      "test": "framebuffer-density",
+      "returncode": 0
+    },
+    {
+      "test": "ui-method",
+      "returncode": 0
+    },
+    {
+      "test": "media-method",
+      "returncode": 0
+    },
+    {
+      "test": "ca-profile",
+      "returncode": 0
+    },
+    {
+      "test": "focaltech-optional-fw",
+      "returncode": 0
+    },
+    {
+      "test": "dwmmc",
+      "returncode": 0
+    },
+    {
+      "test": "dwmmc-clock",
+      "returncode": 0
+    },
+    {
+      "test": "emmc-log-record",
+      "returncode": 0
+    },
+    {
+      "test": "emmc-log-writer",
+      "returncode": 0
+    },
+    {
+      "test": "drivers-check.py",
+      "returncode": 0
+    },
+    {
+      "test": "boot-args-test.py",
+      "returncode": 0
+    },
+    {
+      "test": "device-unittest",
+      "returncode": 0
+    }
+  ],
+  "result": "PASS",
+  "extended": false,
+  "scope": "Host verification only; no phone writes and no claim of working wireless/Metal"
+}

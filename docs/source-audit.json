@@ -1,0 +1,8 @@
+{
+  "result": "PASS",
+  "source_files_scanned": 743,
+  "binary_and_private_input_scan": "PASS",
+  "xnu_patch_against_original_base": "PASS",
+  "mesa_exact_source_patch": "PASS",
+  "text_script_exception": "kernel/userland/rc.jobs.apfs is a shell-command source file, not a filesystem image"
+}

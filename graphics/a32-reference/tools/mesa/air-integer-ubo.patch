@@ -1,0 +1,81 @@
+--- /home/lumi/y2sios/kernel/tools/mesa/air/air_metal.c	2026-10-30 13:29:10.379945870 +0100
++++ /home/lumi/metal-port/tools/mesa/air/air_metal.c	2026-10-30 18:42:34.422383716 +0100
+@@ -4422,15 +4422,33 @@
+           * window server's time on a still lock screen, in memmove under
+           * panfrost_emit_const_buf (27 October, idle profile).
+           */
+-         if (boffset % device->ubo_offset_align == 0) {
++         if (boffset % device->ubo_offset_align == 0 && left > 4096) {
++            /* The resource for the GPU's own descriptor reads AND the mapping for the words
++             * Panfrost copies into its push registers. On Bifrost those words are not only
++             * UBO 0's: clearFragment20's output comes from a constant at index 14, and with
++             * the mapping left out of every index but 0 its pushed words were zeros.
++             *
++             * A block of 4 KB or less is served the other way, as a user buffer (see the
++             * branch below): the program writes a Metal constant buffer through its own
++             * mapping, and the GPU here does not see those writes -- the ARM cores' caches are
++             * not coherent with the device, and a clean from the submitting core does not
++             * clean the writer's. Panfrost's own upload copies a small block on the processor
++             * into the batch pool, which is written like every descriptor and is visible.
++             */
+             cb.buffer = b->res;
+-            if (r->index == 0)
+-               cb.user_buffer = b->map;
++            cb.user_buffer = b->map;
+             p_atomic_inc(&rwa_ubo_direct);
+          } else {
+-            /* what is really there (up to Gallium's 64 KB), not air.buffer_size: a shader may
++            /* What is really there (up to Gallium's 64 KB), not air.buffer_size: a shader may
+              * read past the size its metadata declares, and Panfrost bounds its pushed words
+-             * by this (panfrost-faultdump.patch) */
++             * by this (panfrost-faultdump.patch).
++             *
++             * This is also the path for a small aligned block (4 KB or less): with no resource
++             * in the binding, Panfrost uploads the bytes into the batch pool on the processor,
++             * which is how a Metal constant buffer reaches the GPU here. A descriptor on the
++             * program's own buffer read zeros: the ARM cores are not coherent with the device,
++             * and no clean from the submitting core reaches the writer's cache. A padded copy
++             * (the `left < can_read` case) is taken for the same reason. */
+             size_t want = MIN2(left, ext != RWA_UBO_UNBOUNDED ? can_read : (size_t)65536);
+ 
+             cb.user_buffer = (const char *)b->map + boffset;
+@@ -6011,10 +6029,37 @@
+       if (!pf || !glsl_type_is_vector_or_scalar(t))
+          continue;
+       enum glsl_base_type base = glsl_get_base_type(t);
+-      if (util_format_is_pure_uint(pf->pipe) && base == GLSL_TYPE_INT)
++      bool changed = false;
++      if (util_format_is_pure_uint(pf->pipe) && base == GLSL_TYPE_INT) {
+          var->type = glsl_vector_type(GLSL_TYPE_UINT, glsl_get_vector_elements(t));
+-      else if (util_format_is_pure_sint(pf->pipe) && base == GLSL_TYPE_UINT)
++         changed = true;
++      } else if (util_format_is_pure_sint(pf->pipe) && base == GLSL_TYPE_UINT) {
+          var->type = glsl_vector_type(GLSL_TYPE_INT, glsl_get_vector_elements(t));
++         changed = true;
++      }
++      /*
++       * The dereferences of the variable were typed when the variable was declared, and
++       * nir_lower_io takes the store's source type from the DEREF, not from the variable
++       * (nir_lower_io.c: nir_get_nir_type_for_glsl_type(type) where type is the deref's).
++       * Without this the variable became uvec4 and the store still said src_type=int32, and
++       * Bifrost's blend unit saturated every value of 2^31 or more to 0 on the uint target
++       * (the NIR had uvec4 and the store int32, and the pixel was 0).
++       */
++      if (changed) {
++         nir_foreach_function(func, nir) {
++            if (!func->impl)
++               continue;
++            nir_foreach_block(block, func->impl) {
++               nir_foreach_instr(instr, block) {
++                  if (instr->type != nir_instr_type_deref)
++                     continue;
++                  nir_deref_instr *deref = nir_instr_as_deref(instr);
++                  if (deref->var == var)
++                     deref->type = var->type;
++               }
++            }
++         }
++      }
+    }
+ }
+ 

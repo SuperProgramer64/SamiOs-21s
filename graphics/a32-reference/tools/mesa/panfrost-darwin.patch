@@ -1,0 +1,410 @@
+--- a/meson.build
++++ b/meson.build
+@@ -1716,7 +1716,7 @@
+   # dependencies (such as vk-runtime) linking to it
+   dep_libdrm = null_dep
+ endif
+-if host_machine.system() == 'darwin' and with_gallium_freedreno
++if host_machine.system() == 'darwin' and (with_gallium_freedreno or with_gallium_panfrost)
+   # No DRM on this system: freedreno's requests go to the kernel's driver through a stand-in
+   # for libdrm (src/hakios-drm, put there by Darwin on redwood's tools/mk-mesa.sh; its one
+   # source file is built with freedreno's drm layer, src/freedreno/drm).
+--- a/src/panfrost/lib/kmod/pan_kmod.h
++++ b/src/panfrost/lib/kmod/pan_kmod.h
+@@ -615,8 +615,19 @@
+    if (mmap_offset < 0)
+       return MAP_FAILED;
+ 
++#ifdef __APPLE__
++   /* (Darwin on redwood: a buffer is the user client's memory of the type that is its handle,
++    * mapped whole; the caller asked for the part that starts at bo_offset) */
++   (void)mmap_offset;
++   (void)prot;
++   (void)flags;
++   host_addr = hakios_drm_map(bo->dev->fd, bo->handle, bo->size);
++   if (host_addr != MAP_FAILED)
++      host_addr = (uint8_t *)host_addr + bo_offset;
++#else
+    host_addr = os_mmap(host_addr, size, prot, flags, bo->dev->fd,
+                        mmap_offset + bo_offset);
++#endif
+    if (host_addr == MAP_FAILED) {
+       mesa_loge("mmap(..., size=%zu, prot=%d, flags=0x%x) failed: %s",
+                 size, prot, flags, strerror(errno));
+--- a/src/panfrost/lib/kmod/pan_kmod.c
++++ b/src/panfrost/lib/kmod/pan_kmod.c
+@@ -176,7 +176,13 @@
+ 
+       p_atomic_inc(&bo->refcnt);
+    } else {
++#ifdef __APPLE__
++      /* (what comes in here is an IOSurface, and the "file descriptor" its ID: hakios-drm) */
++      struct hakios_drm_surface surface = { .surface = (uint32_t)fd };
++      size_t size = hakios_drm_surface(dev->fd, &surface) ? 0 : surface.size;
++#else
+       size_t size = lseek(fd, 0, SEEK_END);
++#endif
+       if (size == 0 || size == (size_t)-1) {
+          mesa_loge("invalid dmabuf size");
+          goto err_close_handle;
+--- a/src/gallium/drivers/panfrost/pan_bo.c
++++ b/src/gallium/drivers/panfrost/pan_bo.c
+@@ -35,10 +35,26 @@
+ #include "wrap.h"
+ 
+ #include "util/os_mman.h"
++#ifdef __APPLE__
++#include <xf86drm.h>
++#endif
+ 
+ #include "util/u_inlines.h"
+ #include "util/u_math.h"
+ 
++/*
++ * What the BO cache keeps and what it did: idle BOs are kept 30 s within a 64 MB budget
++ * (upstream drops them after 2 s), fewer allocations and mappings in the kernel per texture.
++ */
++#define REDWOOD_BO_IDLE_S 30
++#define REDWOOD_BO_BUDGET (64ull << 20)
++
++struct redwood_bo_cache_stats {
++   uint64_t hits, misses, evicted, evicted_bytes;
++   uint64_t cached_bytes, cached_bos;
++};
++struct redwood_bo_cache_stats redwood_bo_cache_stats;
++
+ /* This file implements a userspace BO cache. Allocating and freeing
+  * GPU-visible buffers is very expensive, and even the extra kernel roundtrips
+  * adds more work than we would like at this point. So caching BOs in userspace
+@@ -121,10 +137,18 @@
+    return NULL;
+ }
+ 
++#ifdef __APPLE__
++static void panfrost_bo_munmap(struct panfrost_bo *bo);
++#endif
++
+ static void
+ panfrost_bo_free(struct panfrost_bo *bo)
+ {
+    struct pan_kmod_bo *kmod_bo = bo->kmod_bo;
++#ifdef __APPLE__
++   /* (Darwin on redwood: a cached BO keeps its CPU mapping, see panfrost_bo_unreference) */
++   panfrost_bo_munmap(bo);
++#endif
+    struct pan_kmod_vm *vm = bo->dev->kmod.vm;
+    uint64_t gpu_va = bo->ptr.gpu;
+ 
+@@ -241,6 +265,11 @@
+       bo->label = label;
+       break;
+    }
++   if (bo) {
++      redwood_bo_cache_stats.hits++;
++      redwood_bo_cache_stats.cached_bytes -= panfrost_bo_size(bo);
++      redwood_bo_cache_stats.cached_bos--;
++   }
+    pthread_mutex_unlock(&dev->bo_cache.lock);
+ 
+    return bo;
+@@ -262,11 +291,16 @@
+        * seconds old, but we don't really care, as long as unused BOs
+        * are dropped at some point.
+        */
+-      if (time.tv_sec - entry->last_used <= 2)
++      if (time.tv_sec - entry->last_used <= REDWOOD_BO_IDLE_S &&
++          redwood_bo_cache_stats.cached_bytes <= REDWOOD_BO_BUDGET)
+          break;
+ 
+       list_del(&entry->bucket_link);
+       list_del(&entry->lru_link);
++      redwood_bo_cache_stats.evicted++;
++      redwood_bo_cache_stats.evicted_bytes += panfrost_bo_size(entry);
++      redwood_bo_cache_stats.cached_bytes -= panfrost_bo_size(entry);
++      redwood_bo_cache_stats.cached_bos--;
+       panfrost_bo_free(entry);
+    }
+ }
+@@ -292,6 +326,8 @@
+ 
+    /* Add us to the bucket */
+    list_addtail(&bo->bucket_link, bucket);
++   redwood_bo_cache_stats.cached_bytes += panfrost_bo_size(bo);
++   redwood_bo_cache_stats.cached_bos++;
+ 
+    /* Add us to the LRU list and update the last_used field. */
+    list_addtail(&bo->lru_link, &dev->bo_cache.lru);
+@@ -327,6 +363,10 @@
+       list_for_each_entry_safe(struct panfrost_bo, entry, bucket, bucket_link) {
+          list_del(&entry->bucket_link);
+          list_del(&entry->lru_link);
++         redwood_bo_cache_stats.evicted++;
++         redwood_bo_cache_stats.evicted_bytes += panfrost_bo_size(entry);
++         redwood_bo_cache_stats.cached_bytes -= panfrost_bo_size(entry);
++         redwood_bo_cache_stats.cached_bos--;
+          panfrost_bo_free(entry);
+       }
+    }
+@@ -355,10 +395,15 @@
+    if (!bo->ptr.cpu)
+       return;
+ 
++#ifdef __APPLE__
++   hakios_drm_unmap(panfrost_device_fd(bo->dev), pan_kmod_bo_handle(bo->kmod_bo),
++                    (void *)(uintptr_t)bo->ptr.cpu);
++#else
+    if (os_munmap((void *)(uintptr_t)bo->ptr.cpu, panfrost_bo_size(bo))) {
+       mesa_loge("munmap failed: %s", strerror(errno));
+       abort();
+    }
++#endif
+ 
+    bo->ptr.cpu = NULL;
+ }
+@@ -393,8 +438,10 @@
+     * to make space for the new allocation.
+     */
+    bo = panfrost_bo_cache_fetch(dev, size, flags, label, true);
+-   if (!bo)
++   if (!bo) {
++      redwood_bo_cache_stats.misses++;
+       bo = panfrost_bo_alloc(dev, size, flags, label);
++   }
+    if (!bo)
+       bo = panfrost_bo_cache_fetch(dev, size, flags, label, false);
+    if (!bo) {
+@@ -459,7 +506,9 @@
+     */
+    if (p_atomic_read(&bo->refcnt) == 0) {
+       /* When the reference count goes to zero, we need to cleanup */
++#ifndef __APPLE__
+       panfrost_bo_munmap(bo);
++#endif
+ 
+       if (dev->debug & (PAN_DBG_TRACE | PAN_DBG_SYNC))
+          pandecode_inject_free(dev->decode_ctx, bo->ptr.gpu,
+--- a/src/gallium/drivers/panfrost/pan_device.c
++++ b/src/gallium/drivers/panfrost/pan_device.c
+@@ -31,6 +31,8 @@
+ #include "util/macros.h"
+ #include "util/u_math.h"
+ #include "util/u_thread.h"
++#include "util/log.h"
++#include <stdlib.h>
+ #include "pan_bo.h"
+ #include "pan_device.h"
+ #include "pan_encoder.h"
+@@ -117,13 +119,7 @@
+     * heap BO in that case.
+     */
+ 
+-   if (dev->arch < 10) {
+-      dev->tiler_heap = panfrost_bo_create(
+-         dev, 128 * 1024 * 1024, PAN_BO_INVISIBLE | PAN_BO_GROWABLE, "Tiler heap");
+-      if (!dev->tiler_heap)
+-         goto err_free_kmod_dev;
+-   }
+-
++   pthread_mutex_init(&dev->tiler_heap_lock, NULL);
+    pthread_mutex_init(&dev->submit_lock, NULL);
+ 
+    /* Done once on init */
+@@ -150,6 +146,35 @@
+    return -1;
+ }
+ 
++/*
++ * The tiler heap, made at its first use: a heap of 32 MB instead of 128 MB, and none for the
++ * processes that open the device and never draw (PAN_TILER_HEAP_MB sets another size).
++ */
++struct panfrost_bo *
++panfrost_device_tiler_heap(struct panfrost_device *dev)
++{
++   struct panfrost_bo *heap = dev->tiler_heap;
++
++   if (heap)
++      return heap;
++   pthread_mutex_lock(&dev->tiler_heap_lock);
++   if (!dev->tiler_heap) {
++      const char *env = getenv("PAN_TILER_HEAP_MB");
++      unsigned mb = env ? (unsigned)atoi(env) : 32;
++
++      if (mb < 4 || mb > 128)
++         mb = 32;
++      heap = panfrost_bo_create(dev, (size_t)mb * 1024 * 1024,
++                                PAN_BO_INVISIBLE | PAN_BO_GROWABLE, "Tiler heap");
++      if (!heap)
++         mesa_loge("panfrost: no memory for a %u MB tiler heap", mb);
++      dev->tiler_heap = heap;
++   }
++   heap = dev->tiler_heap;
++   pthread_mutex_unlock(&dev->tiler_heap_lock);
++   return heap;
++}
++
+ void
+ panfrost_close_device(struct panfrost_device *dev)
+ {
+@@ -158,7 +183,9 @@
+     */
+    if (dev->model) {
+       pthread_mutex_destroy(&dev->submit_lock);
+-      panfrost_bo_unreference(dev->tiler_heap);
++      pthread_mutex_destroy(&dev->tiler_heap_lock);
++      if (dev->tiler_heap)
++         panfrost_bo_unreference(dev->tiler_heap);
+       panfrost_bo_unreference(dev->sample_positions);
+       panfrost_bo_cache_evict_all(dev);
+       pthread_mutex_destroy(&dev->bo_cache.lock);
+--- a/src/gallium/drivers/panfrost/pan_device.h
++++ b/src/gallium/drivers/panfrost/pan_device.h
+@@ -160,7 +160,8 @@
+     * simultaneously; by keeping on the device struct, we eliminate a
+     * costly per-context allocation. */
+ 
+-   struct panfrost_bo *tiler_heap;
++   struct panfrost_bo *tiler_heap;   /* made by panfrost_device_tiler_heap() at the first tiler job */
++   pthread_mutex_t tiler_heap_lock;
+ 
+    /* The tiler heap is shared by all contexts, and is written by tiler
+     * jobs and read by fragment job. We need to ensure that a
+@@ -211,6 +212,8 @@
+ 
+ void panfrost_close_device(struct panfrost_device *dev);
+ 
++struct panfrost_bo *panfrost_device_tiler_heap(struct panfrost_device *dev);
++
+ bool panfrost_supports_compressed_format(struct panfrost_device *dev,
+                                          unsigned texfeat_bit);
+ 
+--- a/src/gallium/drivers/panfrost/pan_cmdstream.c
++++ b/src/gallium/drivers/panfrost/pan_cmdstream.c
+@@ -4146,8 +4146,10 @@
+       batch->tiler_ctx.midgard.disable = !has_draws;
+       batch->tiler_ctx.midgard.no_hierarchical_tiling =
+          dev->model->quirks.no_hierarchical_tiling;
+-      batch->tiler_ctx.midgard.heap.start = dev->tiler_heap->ptr.gpu;
+-      batch->tiler_ctx.midgard.heap.size = panfrost_bo_size(dev->tiler_heap);
++      struct panfrost_bo *tiler_heap = panfrost_device_tiler_heap(dev);
++
++      batch->tiler_ctx.midgard.heap.start = tiler_heap->ptr.gpu;
++      batch->tiler_ctx.midgard.heap.size = panfrost_bo_size(tiler_heap);
+    }
+ 
+    return batch->tiler_ctx.midgard.polygon_list;
+--- a/src/gallium/drivers/panfrost/pan_jm.c
++++ b/src/gallium/drivers/panfrost/pan_jm.c
+@@ -158,7 +158,7 @@
+     */
+    if (batch->jm.jobs.vtc_jc.first_tiler)
+       bo_handles[submit.bo_handle_count++] =
+-         panfrost_bo_handle(dev->tiler_heap);
++         panfrost_bo_handle(panfrost_device_tiler_heap(dev));
+ 
+    /* Always used on Bifrost, occassionally used on Midgard */
+    bo_handles[submit.bo_handle_count++] =
+@@ -411,12 +411,13 @@
+       return tiler_desc;
+ 
+    struct panfrost_ptr t = pan_pool_alloc_desc(&batch->pool.base, TILER_HEAP);
++   struct panfrost_bo *tiler_heap = panfrost_device_tiler_heap(dev);
+ 
+    pan_cast_and_pack(t.cpu, TILER_HEAP, heap) {
+-      heap.size = panfrost_bo_size(dev->tiler_heap);
+-      heap.base = dev->tiler_heap->ptr.gpu;
+-      heap.bottom = dev->tiler_heap->ptr.gpu;
+-      heap.top = dev->tiler_heap->ptr.gpu + panfrost_bo_size(dev->tiler_heap);
++      heap.size = panfrost_bo_size(tiler_heap);
++      heap.base = tiler_heap->ptr.gpu;
++      heap.bottom = tiler_heap->ptr.gpu;
++      heap.top = tiler_heap->ptr.gpu + panfrost_bo_size(tiler_heap);
+    }
+ 
+    uint64_t heap = t.gpu;
+--- a/src/gallium/targets/osmesa/osmesa_target.c
++++ b/src/gallium/targets/osmesa/osmesa_target.c
+@@ -30,6 +30,43 @@
+ #include "pipe/p_screen.h"
+ #include "pipe/p_state.h"
+ 
++#ifdef GALLIUM_PANFROST
++#include "panfrost/drm/panfrost_drm_public.h"
++#include "util/driconf.h"
++#include "util/xmlconfig.h"
++#include <xf86drm.h>
++
++static const driOptionDescription panfrost_options[] = {
++#include "panfrost/driinfo_panfrost.h"
++};
++
++/* The Mali's driver, where the kernel has started it (Darwin on the A32); NULL: none. */
++static int panfrost_fd = -1;
++static struct pipe_screen *
++osmesa_create_panfrost_screen(void)
++{
++   static driOptionCache info, cache;
++   static struct pipe_screen_config config;
++   struct pipe_screen *screen;
++   int fd;
++
++   if (debug_get_bool_option("OSMESA_SOFTWARE", false))
++      return NULL;
++   fd = drmOpenWithType("panfrost", NULL, DRM_NODE_RENDER);
++   if (fd < 0)
++      return NULL;
++   /* panfrost_create_screen() reads these without asking: NULL is a crash, not a default. */
++   driParseOptionInfo(&info, panfrost_options, ARRAY_SIZE(panfrost_options));
++   driParseConfigFiles(&cache, &info, 0, "panfrost", NULL, NULL, NULL, 0, NULL, 0);
++   config.options = &cache;
++   config.options_info = &info;
++   screen = panfrost_drm_screen_create(fd, &config);
++   if (screen)
++      panfrost_fd = fd;
++   return screen ? debug_screen_wrap(screen) : NULL;
++}
++#endif
++
+ #ifdef GALLIUM_FREEDRENO
+ #include "freedreno/drm/freedreno_drm_public.h"
+ #include "util/driconf.h"
+@@ -79,7 +116,7 @@
+ struct pipe_resource *
+ osmesa_surface_resource(struct pipe_screen *screen, uint32_t surface)
+ {
+-#ifdef GALLIUM_FREEDRENO
++#if defined(GALLIUM_FREEDRENO) || defined(GALLIUM_PANFROST)
+    struct hakios_drm_surface s = { .surface = surface };
+    struct pipe_resource templ = {
+       .target = PIPE_TEXTURE_2D,
+@@ -90,7 +127,7 @@
+    };
+    struct winsys_handle handle = { .type = WINSYS_HANDLE_TYPE_FD };
+ 
+-   if (gpu_fd < 0 || hakios_drm_surface(gpu_fd, &s) != 0)
++   if ((gpu_fd < 0 && panfrost_fd < 0) || hakios_drm_surface(gpu_fd >= 0 ? gpu_fd : panfrost_fd, &s) != 0)
+       return NULL;
+    if (s.pixel_format != 0x42475241 /* 'BGRA' */ || s.planes != 0)
+       return NULL;
+@@ -118,6 +155,11 @@
+    struct sw_winsys *winsys;
+    struct pipe_screen *screen;
+ 
++#ifdef GALLIUM_PANFROST
++   screen = osmesa_create_panfrost_screen();
++   if (screen)
++      return screen;
++#endif
+ #ifdef GALLIUM_FREEDRENO
+    screen = osmesa_create_gpu_screen();
+    if (screen)
+--- a/src/gallium/targets/osmesa/meson.build
++++ b/src/gallium/targets/osmesa/meson.build
+@@ -39,7 +39,7 @@
+   ],
+   dependencies : [
+     dep_ws2_32, dep_thread, dep_clock, dep_unwind, driver_swrast, idep_mesautil,
+-    driver_freedreno, idep_xmlconfig, dep_libdrm,
++    driver_freedreno, driver_panfrost, idep_xmlconfig, dep_libdrm,
+   ],
+   name_prefix : host_machine.system() == 'windows' ? '' : [],  # otherwise mingw will create libosmesa.dll
+   soversion : host_machine.system() == 'windows' ? '' : '8',

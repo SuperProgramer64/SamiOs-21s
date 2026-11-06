@@ -1,0 +1,22 @@
+# Generated at build time (and not ours to publish)
+*.o
+*.bin
+*.img
+*.gz
+*.apfs
+*.zip
+*.log
+*.tar
+*.tar.xz
+*.ipsw
+*.im4p
+diag/font8x16.h
+loader/font8x16.h
+loader/touchfw.h
+xnuloader/identity.h
+boot.img
+fw-*/
+logs/
+probe-*.txt
+*-pmsg.txt
+.DS_Store

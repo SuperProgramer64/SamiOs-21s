@@ -1,0 +1,3734 @@
+{
+  "date": "2026-11-06",
+  "common_upstream": "https://github.com/oosexgang/hakios-xnu-kernel",
+  "common_base_commit": "87bf4851bcc9cbb24fd79997820aa3661abe4ea5",
+  "files": [
+    {
+      "path": "kernel/.gitattributes",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "780517569ca6b4b2df801ee7ed601032d21b15efd684faeecc7d6ccf85f600fe"
+    },
+    {
+      "path": "kernel/.gitignore",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "1727482f640e5d5f4744da3c27d9aaf0b242b445e889414239eaf4a9430fb014"
+    },
+    {
+      "path": "kernel/CHANGELOG.md",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "156a30ee8eebd1eceb57d810c276192f72675bd5864b3a93356538722e987fd3"
+    },
+    {
+      "path": "kernel/COMMUNITY.md",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "37e80fa3b0271c36c93341ff09189092115a77169a7b20899ce9a012de55fb0a"
+    },
+    {
+      "path": "kernel/COMPLIANCE.md",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "a45ed5cb349baae83b137d8fd62e5a64fb15b50321bed16bc2b375fb4693aaf9"
+    },
+    {
+      "path": "kernel/CONTRIBUTING.md",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "cb05dd83c87745d5ebb823fe72dfeaeeb8ec2bb8890f65553b43691ab50b305c"
+    },
+    {
+      "path": "kernel/LEGAL.md",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "02fa1085704af30a206fdd40e7c6059ff771c4d83b1b6f11a8973292349371cc"
+    },
+    {
+      "path": "kernel/LICENSE",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "15c02b5b5f49938db79fbc85ff1905ece5d3da7a2c32db5de5b9897eb4fa5f4a"
+    },
+    {
+      "path": "kernel/LICENSE.APSL",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "e5881019d8766c1e88a5fe1dbca4ba40c78011d41fcb18f6e9f50df60182685b"
+    },
+    {
+      "path": "kernel/Makefile",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "1030e1d2b4ca8262ce936fbf5b5050d1ec0f6f682edb642d8a44da7df8b81eff"
+    },
+    {
+      "path": "kernel/NOTICE",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "66a3248bd68147196c10b289bdb799a73190c0eb300a0abaa46128d63008fe7e"
+    },
+    {
+      "path": "kernel/README.md",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "c52306fbda75df97313dc4a9a3bbe682653ed92dc8cb905461f46f967ff73554"
+    },
+    {
+      "path": "kernel/THIRD_PARTY_LICENSES.md",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "67807fb6dbe5f76e11c64b6e57a3277315129a2ca15d5ecd88c8722d822b8e9a"
+    },
+    {
+      "path": "kernel/VERSION",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "1fc89fe0c3cf94c08d6a251e25d9d23414c744ea263b6e34dfb516545098e212"
+    },
+    {
+      "path": "kernel/ci/github-check.yml",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "b95239cd5652e50514caf2f7c6da7b52718e1c74260270e990f0eb27d9addc18"
+    },
+    {
+      "path": "kernel/configs/boot-args.lst",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "4079e4cecceaf9c65df3f4c7c1bba6b9bef04b3d04d10c404baa871cd7f3722c"
+    },
+    {
+      "path": "kernel/configs/common_defconfig",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "963a9d86299851d2cf5fa2973b615cb3ddcc3278abf5561acd6d769c95e7f2a2"
+    },
+    {
+      "path": "kernel/configs/defconfig",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "14fabe629a58159879ca7fd627779e822a01fb91b624c7f4226516e63ede99ca"
+    },
+    {
+      "path": "kernel/configs/open.config",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "ee04aa9925ac8243d28f5244694a51f63c9b161ee108f303a6fdf619f2cca414"
+    },
+    {
+      "path": "kernel/configs/persist.config",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "90c546b0ee1255b3ba5c3f7ad1e71b776ceb3adf6c79f9f4ff2c4f1c1e44e746"
+    },
+    {
+      "path": "kernel/configs/symbols.tsv",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "7c3f8654b9e1b7b112e9dcdf650c36123732c751aa4ac34d6d2c41fe7bc35721"
+    },
+    {
+      "path": "kernel/configs/trace.config",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "4decc4372273971f6b7e2e0978b23b16e80508e3b82001f5bda67984eaa78710"
+    },
+    {
+      "path": "kernel/configs/virt.config",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "ede629d972aabdfe276107cfb878203801c46f883f272e3eaf82f9deda573f70"
+    },
+    {
+      "path": "kernel/devices/README.md",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "4dd3c7475d3569c107dff86801c2c490cb43acd8983e5b48f5953ac2adb5d1ab"
+    },
+    {
+      "path": "kernel/devices/manifest.conf",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "410e0ecce9b95b62125d4837d14677df472d6d56ad98d0897f3b44415f1958ee"
+    },
+    {
+      "path": "kernel/devices/qemu/configs/qemu_defconfig",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "00863be4b54337e080b71f55deda49b8269389c79b5d59f045470f3f74ba9e9b"
+    },
+    {
+      "path": "kernel/devices/qemu/device.conf",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "1b1752b59b53968e582bdde8536c156bc5fb06025bb810ee8ed90a59f4d523ce"
+    },
+    {
+      "path": "kernel/devices/qemu/u-boot/files/configs/hakios_qemu_defconfig",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "f410442f6379469074d0970534508760b5293db1913b6f18922f7bde80e961d5"
+    },
+    {
+      "path": "kernel/docs/air-report.md",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "d7107551fa32e056aa077dedacabddf4167584bcfae123ad699ec40ec5ea0df4"
+    },
+    {
+      "path": "kernel/docs/air.md",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "eb8749fde6785d95d2ed34dbd98d4bba64b83344f1f5e115c8f2227bd54c8486"
+    },
+    {
+      "path": "kernel/docs/boot-args.md",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "07e377686b5f269265fda57dc1219c3e1a66cfbb12f46f9ea684a27af447e4d8"
+    },
+    {
+      "path": "kernel/docs/cellular.md",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "95d9340d5b8fbf9db74c6ef19b1ec6e7ae2ddd9ade699cdaabfb9943384bb76b"
+    },
+    {
+      "path": "kernel/docs/comparison.md",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "abd65ec5df25ff6ca6fc93079f4330a4074700710c6458f4f0796acbaca88901"
+    },
+    {
+      "path": "kernel/docs/concepts/architecture.md",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "8159aec55992e0ba6e0729a0931a80359800efb57feb8323e8045f0c89b64495"
+    },
+    {
+      "path": "kernel/docs/configs.md",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "dd1aabc1618f9f9be2c0658b53faba53e0d12c1ed9af880bd869aabefcb93546"
+    },
+    {
+      "path": "kernel/docs/devices/index.md",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "e7cfad0b962890ec270aa5d5a81ab6a9a0015e1e82c84894a296da7d97484914"
+    },
+    {
+      "path": "kernel/docs/devices/qemu.md",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "eb333b17a86a297a06abf1146dae4a3decba36cccd1f9a391c12c0436796b999"
+    },
+    {
+      "path": "kernel/docs/devices/redwood.md",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "183dae7fb2eeea57571c32dfd2bf02b7d49aff1e007c57fcc33d0b3e9fe6f360"
+    },
+    {
+      "path": "kernel/docs/driver-review/README.md",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "c59d1e78772da0ab88d70f10413c7efbdab8c820a449b9fd0919a3b39adfbd56"
+    },
+    {
+      "path": "kernel/docs/driver-review/adsp-battery-cpufreq.md",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "0e8aa5421c2ac329f63a872cda5215b0e5d50ecf8f81a0104df548b11582b4c3"
+    },
+    {
+      "path": "kernel/docs/driver-review/camera-haptic-torch.md",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "4422675a80a9900263b19ebb1ac8a3bfcbb3b9a3e5387c2a7034293373ca60e6"
+    },
+    {
+      "path": "kernel/docs/driver-review/gpu-display.md",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "5eb5934b6d00785e5e5f4f401423a3ad95ab78984cb990a3758fc054ded4e41b"
+    },
+    {
+      "path": "kernel/docs/driver-review/input.md",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "c75f52f03d649bb6d63a044eb53d46c6baceee03e0fac31d3b0b632fc0300df7"
+    },
+    {
+      "path": "kernel/docs/driver-review/loader.md",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "34576d926b5b8de640dfab80b796b6c8f614702f0031ec7f3f1d259075d5a9bf"
+    },
+    {
+      "path": "kernel/docs/driver-review/policy-glue.md",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "6655d6d3fa398dfcbd2ffb429bc00205663a5baf267841f53f9d188d82ecf85d"
+    },
+    {
+      "path": "kernel/docs/driver-review/sound.md",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "ba1f24902c8f03a8408a31a8bfe0847a829d45c9b5bf80e8ccf3a94228f4295f"
+    },
+    {
+      "path": "kernel/docs/driver-review/storage.md",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "cb13695947ac3755d5cf940be823e67755e5fa93312ecae7e768c5b68486d0bf"
+    },
+    {
+      "path": "kernel/docs/driver-review/wifi-bringup.md",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "0f34550280a62eb3c48e6135d48990a53a539733e65105ccfe52d1922ea2863d"
+    },
+    {
+      "path": "kernel/docs/driver-review/wifi-stack.md",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "e5d5ad65ac090d78b3d01956d901db76284170cbed8fe8e931a9d73aaaee7ecb"
+    },
+    {
+      "path": "kernel/docs/drivers-config.md",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "3dccd3a247f44466bfe2b89eaefb43a6e85e7c198b7e88463d5332dd871049e4"
+    },
+    {
+      "path": "kernel/docs/dual-boot.md",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "8dc80f1214872c9f533afd186f9cbbefe26f295cb1a6787a0fb150df84ca35af"
+    },
+    {
+      "path": "kernel/docs/getting-started/building.md",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "85e516169bb332902534e8f7209edef11604f7623167602765d266a3df7cc30c"
+    },
+    {
+      "path": "kernel/docs/getting-started/index.md",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "0bcb5c378e30d17ea6c618e8417a1f17d7b52d80219715615ccb67556eca8cef"
+    },
+    {
+      "path": "kernel/docs/getting-started/phone.md",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "ca82bc0696bc2f51f5def7dd854a17fed125573bbb168dd734869fed2987cd5d"
+    },
+    {
+      "path": "kernel/docs/getting-started/qemu.md",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "98e42c747fdb106dc3b737122d4e7f3248918f68861df36a36093ef9c43470b7"
+    },
+    {
+      "path": "kernel/docs/index.md",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "82b6cc9c49d719afe6e4f4a29ef75a67a8927d49ab93b8956c801098aa99496a"
+    },
+    {
+      "path": "kernel/docs/install-safe.md",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "0f1279a3f82c49f7d59f774578ae3427ffc341f13933fdacb11ce3dad545fefc"
+    },
+    {
+      "path": "kernel/docs/install.md",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "ead85a94c97ae2b657b880620ee827270630e1f7b73a85bfc1132e1f73a1dca8"
+    },
+    {
+      "path": "kernel/docs/legal-review.md",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "eb525a7b45bc7b59e9ec15fa511ee443cacad71c9154fd5ddf3a1fe1693b87aa"
+    },
+    {
+      "path": "kernel/docs/metal-plan.md",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "450dfe462feedd1ba861f4eb01dc3db803b10b3b881223427da1a951495d3da5"
+    },
+    {
+      "path": "kernel/docs/net-review.md",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "06d9b2cf0b6482d9c681ec4761b3c3814a51e48322ff11fdd8598d53533c8454"
+    },
+    {
+      "path": "kernel/docs/port-pkg110.md",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "e18e6e50a3c96d86ba52cc56c90367b647d7a8b5b0dd16485ee7a4821faa29b5"
+    },
+    {
+      "path": "kernel/docs/porting/drivers.md",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "62f008661aadde5bbecdfca7c40bbffa8e794c8ef7f99855d35e4ad82e25a578"
+    },
+    {
+      "path": "kernel/docs/porting/index.md",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "5d89b3ace723a1d3bd853901458cc13a7aa664171a6f683c06b6ec02f2212897"
+    },
+    {
+      "path": "kernel/docs/porting/repositories.md",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "b88bd5fa729b3b8db0184cb96caf26f3038b08120b1fd7098541168cbeda0dba"
+    },
+    {
+      "path": "kernel/docs/reference/drivers.md",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "88d04236f7fc2349a640f60371db532fa76193ab90987b5c934b2641509f75de"
+    },
+    {
+      "path": "kernel/docs/reference/metal-measurements.md",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "ecae4e2e0bb36a605484e8bbbf9269dc37ffdcb4ba02366ad78e8fef5365b724"
+    },
+    {
+      "path": "kernel/docs/reference/metal.md",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "a3f1553152ab954f1c5f8875cffcf6548f72452a051b47a078edb04c42b9577b"
+    },
+    {
+      "path": "kernel/docs/reference/tools.md",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "e59a3f9c42fc723a20a62258b2c47310976d0ed76823c6bffa2ff717200191ea"
+    },
+    {
+      "path": "kernel/docs/ru/cellular.md",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "7aa5cb70c77b1a284816d2a82712de939ca8d23008187733a2f3e1b9d88c788f"
+    },
+    {
+      "path": "kernel/docs/ru/dual-boot.md",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "5b427ddd1f1c488dc0eb7bae38651bd63843f141da65140c8551afea78b68857"
+    },
+    {
+      "path": "kernel/docs/ru/metal.md",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "cb944acc284954669a417a6310a118f94dca4dcdb9a13822821e5eafc8aec952"
+    },
+    {
+      "path": "kernel/docs/site/README.md",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "df4f634333b666aff6504e6386b87fabe723608f880014876b7c3b76c53d5e84"
+    },
+    {
+      "path": "kernel/docs/site/index.html",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "cc993be15ad11a87bc27fdf1807587dbab48b518d7203a3ecd46aabb48078dcd"
+    },
+    {
+      "path": "kernel/docs/u-boot.md",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "93abc6b697a7eab1c7ff696410a0fadd31f085b7519ce68f1da0c2e8bba5ef6d"
+    },
+    {
+      "path": "kernel/docs/uefi-boot.md",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "1527c8fbbe192defb6ae448310ef2ec7ff77d774decca1fe5a6910d220d80d68"
+    },
+    {
+      "path": "kernel/docs/versioning.md",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "a753f16ce98a868b5c9abfb928e053621c1a5175116cfde6b65cfaf6548ec25b"
+    },
+    {
+      "path": "kernel/docs/windows.md",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "820753d6a9c3a8a2a420d2898f11dc4872d98d5cd8786ca4e7c4a54eb3cb8925"
+    },
+    {
+      "path": "kernel/drivers/README.md",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "63fd950a7019656ba4f2e25c6d64174361354e6878c5ee99e426afddc17dd64b"
+    },
+    {
+      "path": "kernel/drivers/audio/conf",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "628808467484fb481ca8c9282405698c70c249d4ae18793b409cfc5c95a98ba6"
+    },
+    {
+      "path": "kernel/drivers/audio/hakios.adsp.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "bacf1a7f7ff6528fc930cbae6e73bdc0506859a0c12ed356c5acc52d315ad92f"
+    },
+    {
+      "path": "kernel/drivers/audio/hakios.audio.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "d7c778fea6297c79f2138780e2b3ff5613d347cdb154d09362758fd34e985953"
+    },
+    {
+      "path": "kernel/drivers/audio/hakios.guard.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "9fd6a51185bef552ad8ebbe9a35a2fc20393fbe73aec853a6516d31ab65d6f46"
+    },
+    {
+      "path": "kernel/drivers/audio/hakios.mic.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "c24d5f2c651ac6c9547b8f17c1c004f1b00b3161663534e854583a5b8f666f7a"
+    },
+    {
+      "path": "kernel/drivers/audio/hakios.sound.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "f8743e9c18e5a23981bbfe05300de5942185b1011ece6ac1ffe3d3a6ac0f49ac"
+    },
+    {
+      "path": "kernel/drivers/audio/hakios.speaker.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "52a2df3ff361b369daaf284f47db36a818e87448ab3b80291afd656897345857"
+    },
+    {
+      "path": "kernel/drivers/audio/hakios.virtio_sound.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "81c314d4ecd51f93dd4ce31b34126e3b1721cc41c8fae690c417be6d0d3da39d"
+    },
+    {
+      "path": "kernel/drivers/bluetooth/conf",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "1068eb056ef4186d8b855424602a71f04a858a09d6bd869590c9dfc849a7e4f7"
+    },
+    {
+      "path": "kernel/drivers/bluetooth/hakios.bt.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "bef8a1ef1af3c593290c1d9355a7b6547a4136b776d7bcd87efce6f91b6dd31b"
+    },
+    {
+      "path": "kernel/drivers/camera/conf",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "9add44f4547291ce0ba2f4059dc60d435d2261efd7edbda96523def32a64ac59"
+    },
+    {
+      "path": "kernel/drivers/camera/hakios.camera.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "7a675ff23910722fa346de2c721859320c6c4400636d404587f769f42c32512d"
+    },
+    {
+      "path": "kernel/drivers/camera/hakios.torch.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "6ecaeff44402ab94b1da2181a97cf30200cc48e8b057b454495bedd1f411057e"
+    },
+    {
+      "path": "kernel/drivers/core/conf",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "6e8967fa338f8b77d2e7f2b3d0a6cfe3efcd570bd7cad222848b47a7f4829cb7"
+    },
+    {
+      "path": "kernel/drivers/core/hakios.platform.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "20902fddf834acff66914e32a902716291cc7f65fcd11c9efba3c119fdbf11f4"
+    },
+    {
+      "path": "kernel/drivers/core/hakios.socinfo.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "4d2f0b513777afb6c2400241656c1aa94c4f30bb1dd8afc98733eb13e04ccc81"
+    },
+    {
+      "path": "kernel/drivers/core/hakios.stubs.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "9f99467352b10415a024c6d797cbea3203ad74ca046a905d28a6d42edef0eb0e"
+    },
+    {
+      "path": "kernel/drivers/core/hakios.stubs.cpp",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "8bc87974f8615cbb3a400a29fada73b76820e2ea70f19994736d628f7af12218"
+    },
+    {
+      "path": "kernel/drivers/core/hakios.version.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "0e586445e6dd2bae4f9bf3f2bd21c4e286ba8eb3c71436be39038e42b9223989"
+    },
+    {
+      "path": "kernel/drivers/gpu/conf",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "a813c43dcc1672de679139c768af7b0b0174778bcf35f9b444ddc76bedfc0f34"
+    },
+    {
+      "path": "kernel/drivers/gpu/hakios.adreno.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "bc7a4c255364dbf0efa23ecdf933c6a2ddbd973c9339b2646afd9e2dbc730645"
+    },
+    {
+      "path": "kernel/drivers/gpu/hakios.gpu.cpp",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "183f181ba6935d9e9a78711548a9949b2f36f747dd1b9010eee98a07ac42b9d3"
+    },
+    {
+      "path": "kernel/drivers/gpu/hakios.mali.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "043822e514451eab3f7b928dcad3a235f20efcf31849ff650ef278d9a0979804"
+    },
+    {
+      "path": "kernel/drivers/gpu/hakios.mali.cpp",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "5f9a669447681b14e3ee0adf5447022f36d1c957420f2d45e072277ec76cd010"
+    },
+    {
+      "path": "kernel/drivers/haptic/conf",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "b82db8257a88314a4de9bca5a2c5f4c239e82b84ac13c54b07f264998e8bf241"
+    },
+    {
+      "path": "kernel/drivers/haptic/hakios.haptic.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "271530fc117b5116a5f9de62a546c4a288646ed4e034c398831ee49d5b126224"
+    },
+    {
+      "path": "kernel/drivers/input/conf",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "81996599b28e2d3bb79518383f46a9a0622e598e8b169e8ea5d7baaae164326c"
+    },
+    {
+      "path": "kernel/drivers/input/hakios.buttons.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "eceb23cc004df7874f69272f14fd1f6d14165334c28a8af088a35e8ff06c47ad"
+    },
+    {
+      "path": "kernel/drivers/input/hakios.exykeys.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "21b7508427addf691fbcbf9b01622cc25a1f560e6390628d435444fa1422dad1"
+    },
+    {
+      "path": "kernel/drivers/input/hakios.exyusb.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "29d2f00cc55377efb16cb657d3c23e301d4566880a8f9ef0874d95a133ca2ea7"
+    },
+    {
+      "path": "kernel/drivers/input/hakios.goodix.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "8f4c704161a99dd35124f0b380ff025fd15acd36454b66dd33788ebbfe50725f"
+    },
+    {
+      "path": "kernel/drivers/input/hakios.input.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "714c5a05ce6f77c9dea2b51426fac829c6ea3671b5e639d13e161a0346558c00"
+    },
+    {
+      "path": "kernel/drivers/input/hakios.ovt_tcm.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "7ceecd0c504593f2d2d8e4a2e028040e58d429f987e8a19d434229b3d19c15c4"
+    },
+    {
+      "path": "kernel/drivers/input/hakios.touch_power.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "099efbc97e86076b4e9ec5c0ed2e2f3a0d24a5386c5290e810e4cb796524056b"
+    },
+    {
+      "path": "kernel/drivers/input/hakios.virtio_input.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "a4991ada1413477b51fa224e6145361363d8c984807e606522f8b8a14fb706f3"
+    },
+    {
+      "path": "kernel/drivers/map",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "a7c5a9a643a71f986dd0a84b8460bdb8d1d7a6545ce22f11ce1a37fdb2c24bb9"
+    },
+    {
+      "path": "kernel/drivers/modem/conf",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "c54df140386c7c98dc4a3200d81cfb85768750c0c3d09f1e918513865107c5ad"
+    },
+    {
+      "path": "kernel/drivers/modem/hakios.cell.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "55ef36f37aad381434e4b020d3f227d117e8957acb0bc402303afb6e4dfedd78"
+    },
+    {
+      "path": "kernel/drivers/modem/hakios.ipa.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "ea26b1c858be45bfbb4ac07d7e9d2064ac7677735bb2ad3b818a6466067ecb86"
+    },
+    {
+      "path": "kernel/drivers/modem/hakios.mpss.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "085e44ec0ee2c27d1be70225adc6042977b8a822487c79338760afc6c98c0262"
+    },
+    {
+      "path": "kernel/drivers/modem/hakios.nas.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "a304a72eee593e6563648ebb492697538355532e4903f9d9755d9d877ee72a73"
+    },
+    {
+      "path": "kernel/drivers/modem/hakios.qmi.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "5feb3ddc9c4244701e2f462e77500a732a3fe1f55d43127a2341ca9a55c1c0a1"
+    },
+    {
+      "path": "kernel/drivers/net/conf",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "e311535613fc60d3993d33cffbd8b7ec4046f36b01b28f81295da7c208685c59"
+    },
+    {
+      "path": "kernel/drivers/net/hakios.net.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "5ed99766af4858137fc41f39498fb384e8d142220411159522fd8b8bdb5507e5"
+    },
+    {
+      "path": "kernel/drivers/net/hakios.virtio_net.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "ccc36788c2fe95f57cdf71d74094fdb8ce6a74fe072c62356ef3d37787f7706a"
+    },
+    {
+      "path": "kernel/drivers/power/conf",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "7935332f74cbc6bb559010a36e701da9b7bc3681b66938a690b9828eeb309fb6"
+    },
+    {
+      "path": "kernel/drivers/power/hakios.battery.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "0facf6d2eed5b093823f86728dfa6494a12fa926aef9c472c9b7fd1835b5dbe5"
+    },
+    {
+      "path": "kernel/drivers/power/hakios.battery.cpp",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "695718935e1b6d78c8450f6cf4c2005605e984bcaf93e7796eb9a6d84a56b56a"
+    },
+    {
+      "path": "kernel/drivers/power/hakios.battguard.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "705c3a39c30a5e47a453cf40a81e868b36c1f7f8e073ff4cb88ea364afc43f5b"
+    },
+    {
+      "path": "kernel/drivers/power/hakios.cpufreq.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "6048378648cb1ea6d4125f31036dfddaab799ba126b192dcd4855d7c4713c35c"
+    },
+    {
+      "path": "kernel/drivers/power/hakios.pmic.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "b78a9bf43c90877439ca5260ead42b86e839beaee5b6bcd39c3f00acebe3ab11"
+    },
+    {
+      "path": "kernel/drivers/power/hakios.thermal.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "08f5b641a985679e3d3b8bb88694b08e22aa0c6b6a6f21cd86fcb65fb4f10a0c"
+    },
+    {
+      "path": "kernel/drivers/storage/conf",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "a707ccfc067c66fad6e4cad8b4eb4ac09d5b93dde586441c00f62abf964ddffb"
+    },
+    {
+      "path": "kernel/drivers/storage/hakios.apfs_check.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "1b1d0d7f361c94a51647a74f65d484d9387eb16f3141f4a3ecfc62fc751e6e60"
+    },
+    {
+      "path": "kernel/drivers/storage/hakios.dwmmc.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "e3d0ae731a8560a8aebe6073f060b6523284946c6e0b8bba1caeaa01d4c6445d"
+    },
+    {
+      "path": "kernel/drivers/storage/hakios.emmc_log.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "c2ff695cce9878027ed5510842e81de5a7888e786abe705848d7e1f14c92a613"
+    },
+    {
+      "path": "kernel/drivers/storage/hakios.image.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "509d4793309c52efe321b1b710a46b7b3d3bd6674464940e159883e11194efaa"
+    },
+    {
+      "path": "kernel/drivers/storage/hakios.sparse.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "614538183266c310800ed8be647153911d89e0adb4401b897dde235244fc67e8"
+    },
+    {
+      "path": "kernel/drivers/storage/hakios.ufs.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "ef6e1985e910333cf8675c43015ce96deb3a8aff24fd3c921986425a0ea6f6a2"
+    },
+    {
+      "path": "kernel/drivers/storage/hakios.ufshc.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "a535ec001c6bb54f58932ecc77949f17d2e307d768b2dd7ba9bb68b9d4be49ce"
+    },
+    {
+      "path": "kernel/drivers/storage/hakios.ufshc.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "51623bbaac4539707e421b5d0d5a69c5afd6e4d409ffd9494a927250dc03f197"
+    },
+    {
+      "path": "kernel/drivers/storage/hakios.virtio_blk.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "fecd3f6b1b584962325aa7be1f16a66168cae16b1e5a6c8f30054770860a4a32"
+    },
+    {
+      "path": "kernel/drivers/wifi/conf",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "113a3e786735c3c8bd7cbbac81dd021d12b5b1ce8925046396d5dfce15e70540"
+    },
+    {
+      "path": "kernel/drivers/wifi/hakios.apple80211.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "d4763a51413998c0c46a0eff0c8bcef5716b59402ceab6d473e524b4431e86b9"
+    },
+    {
+      "path": "kernel/drivers/wifi/hakios.lx.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "7ee76d56202c9c5529842d45ee20c9ea2410940719b365c95db08207fb809f84"
+    },
+    {
+      "path": "kernel/drivers/wifi/hakios.sta.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "9ea972a32152402badbbcc162846fe00e61f02f2de355ea8cd770cfd2b462174"
+    },
+    {
+      "path": "kernel/drivers/wifi/hakios.wifi.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "7a413b1b8b46a899c4d3fd33832aac2159d976c5fea4d285f7f0351ec014a411"
+    },
+    {
+      "path": "kernel/drivers/wifi/hakios.wlan.cpp",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "c09833d2d1f486f0623fa588985bde692434b0e8023f99e23869bf0895aad551"
+    },
+    {
+      "path": "kernel/drivers/wifi/hakios.wlfw.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "4282f0973383948c16cbdf5e29c7b9943bdbc5246b67ad7620d6c448ca969c0c"
+    },
+    {
+      "path": "kernel/mkxnuimg.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "cb631cf0b5c2e8bdcf2136330fd655c952db1cfde0744599a60d5197e460622b"
+    },
+    {
+      "path": "kernel/qemu/daemonlog.sh",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "3ebc94de56dc6406357628f0753e48e625b66a1e070f90644a56ca848dbf71db"
+    },
+    {
+      "path": "kernel/qemu/run-darwin.sh",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "31af20b9a03aa706b09e151adf4bf2a7b10de12153d226570e32a10de1ea7b04"
+    },
+    {
+      "path": "kernel/qemu/run-hfs-test.sh",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "f5709a708164a78800004f514e3b3decd1dd21a9dcc8fb289fcb80e62baeec95"
+    },
+    {
+      "path": "kernel/qemu/run-u-boot.sh",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "eeaa0edbf1f71c0e042bf4704deba5501089814b65a344371b522f8bea436eab"
+    },
+    {
+      "path": "kernel/qemu/run.sh",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "98ac83e6af5744a0ad51ff281138f98cb49038c0577d337e6970335376acfafd"
+    },
+    {
+      "path": "kernel/qemu/screendump.sh",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "4db4d96b3fa0b9412cfc08e1ac26524b2a75f0cfdb3bc55c42dab0e4814d3bed"
+    },
+    {
+      "path": "kernel/qemu/stop.sh",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "5ba9eac55dc640992feeb8c22c9474741f4b1fd104ca3f5ba4813ad4b547d4b5"
+    },
+    {
+      "path": "kernel/qemu/sym.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "1ffaec7f29df50f60d98e1a57251375d4cc8e002d423908e0071e25ea90bffad"
+    },
+    {
+      "path": "kernel/qemu/symstack.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "3748de42513665589f0dff6504fd7e78b4ead9c3b0554803fac349b5e8068fda"
+    },
+    {
+      "path": "kernel/qemu/touch.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "5545998ff4ffa41502a25a10d6234bfb796924fe4bee70f15c10d5e33623db9b"
+    },
+    {
+      "path": "kernel/qemu/where.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "0bea63a2dfb52f5ae4f223d03d7f1741f1d75bd62b4b9d88dfd27ffaf1efbbba"
+    },
+    {
+      "path": "kernel/socs/README.md",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "b5d80ecbb3f42b71cc4daffecaf3f336dba6ce16e26c71419677bdfb942a36de"
+    },
+    {
+      "path": "kernel/sysimage/ipsw-member.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "222cbf16432e67202a9bea33cf8cc5c007d41e8991ba916bafbfa049ae6f95ba"
+    },
+    {
+      "path": "kernel/sysimage/mkvarskel.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "ea6191dfe4daee9817dad9bd81c358900093af1c626a87e950912965fbd584db"
+    },
+    {
+      "path": "kernel/sysimage/select-system.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "1224e46719be478a2ee3c1319d8e41bb6438300b36a90fa66445ed0377122d37"
+    },
+    {
+      "path": "kernel/sysimage/unpack.sh",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "5a66203d78459b052f22b239bcc9f94ef8c5ee1163329ff40b91451907ccd7e0"
+    },
+    {
+      "path": "kernel/tools/air/atomiccheck.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "3be529013f787d25627f40ade6f17d3c2d9ec4f31043787935f764da296af9b0"
+    },
+    {
+      "path": "kernel/tools/air/check.sh",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "2b0b6f820dd96e255766c5d760b6d916aad106754ce862ad874eb5006430dcf4"
+    },
+    {
+      "path": "kernel/tools/air/corpus.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "81b59b50e81c85af94e98ce7a87ab720d4ed004b78fbd425226bfbe4a3141b60"
+    },
+    {
+      "path": "kernel/tools/air/cpuref.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "67323bfe44000887c1c90b43656cafd1e665cb881b8489fda5828639eaae616a"
+    },
+    {
+      "path": "kernel/tools/air/intrincheck.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "7057bd8dc3d309959af4f1620232332e7750f21c8606957bde18ef64d0e18898"
+    },
+    {
+      "path": "kernel/tools/air/kernelcheck.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "eabb0066865ac6e2dc5fa7a5cca97f88e3cabd9be1cb0aec7808c9daaf38818c"
+    },
+    {
+      "path": "kernel/tools/air/libcheck.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "a70844cecf8c95258ecb75fa2bedfeccc0871125dae3766a165537ec0532fee6"
+    },
+    {
+      "path": "kernel/tools/air/mk-host.sh",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "c9855a8b8c6d2da9be32b9e7126c460bff809341951bf933c7e2517a3fdabbc9"
+    },
+    {
+      "path": "kernel/tools/air/reader-check.sh",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "ed7332ab0a504192a640cefcd1c807c88d471619f8fdf9ab55a5f93183f32938"
+    },
+    {
+      "path": "kernel/tools/air/texcheck.sh",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "3c55a470ed83d8a6958c6846f7d5a1e0169df50236771a83eb472722181a8136"
+    },
+    {
+      "path": "kernel/tools/air/texopcheck.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "30081319baa2a77157c630cf66172e4626cd87b2eeab8628d3c3db06d7e94b90"
+    },
+    {
+      "path": "kernel/tools/android/build.sh",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "99775851af8df270a5aa27b32aeea2e3ab4f0c251c42c6d6adf6de366265f36d"
+    },
+    {
+      "path": "kernel/tools/android/f2fs-resize.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "304696d6588b512f14832d7d741b91f907fa9dd62a1458c37b438013016581d7"
+    },
+    {
+      "path": "kernel/tools/apfs/apfs-tool.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "2332f89e388a4a564c5035ceea57f790abcdd8ff2d0d249b3cd6c688dc5505eb"
+    },
+    {
+      "path": "kernel/tools/apfs/apfs.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "a051520d0c1f4f9d783c484be3beaeb536a1b4364fd8ed2e6a9b5c2d98592588"
+    },
+    {
+      "path": "kernel/tools/apfs/bench-phone.sh",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "04fa9f78c5a438341f41d76a4051862b6e98942890bcd503ab90a8869a24ee82"
+    },
+    {
+      "path": "kernel/tools/apfs/bench-qemu.sh",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "14e87a59f86bd251b32a4bf07de9699e9227f2055b7182c90a84dcbdff1b8ae7"
+    },
+    {
+      "path": "kernel/tools/apfs/build-tool.sh",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "b2d7bf573055a7e4589f8c496718c710a3a0c767af8bc988c6c88524ff984d0a"
+    },
+    {
+      "path": "kernel/tools/apfs/check-image.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "5249142da9662b3ce74155fa956ed1fc841e68557ad5bc8864aa3c6d2ff5f4cf"
+    },
+    {
+      "path": "kernel/tools/apfs/check-image.sh",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "4206ebef2656924e0cff75f1c3367b58f4989e1052d79d670499ec3422b01bbd"
+    },
+    {
+      "path": "kernel/tools/apfs/dmg.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "d7aab6e514a3b6a63cc666bd6129529e315e04fb2eff897b6333ce8d2dba8423"
+    },
+    {
+      "path": "kernel/tools/apfs/fmt_check.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "67bcc97d9ebd884ac7fda1a38531b5190ac1cce69d5d337e05db72d6536e5ea0"
+    },
+    {
+      "path": "kernel/tools/apfs/fnvsum.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "c7603606acddeb68bf48e6972aea7a145a9ab11842b923b9d554ed54596bb3d7"
+    },
+    {
+      "path": "kernel/tools/apfs/host-shim/x86/adler32_impl.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "92b7c48eef085849fb2cc05a266330fedb71a7ccf43c01f6c0e5f08a40df98c8"
+    },
+    {
+      "path": "kernel/tools/apfs/host-shim/x86/decompress_impl.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "92b7c48eef085849fb2cc05a266330fedb71a7ccf43c01f6c0e5f08a40df98c8"
+    },
+    {
+      "path": "kernel/tools/apfs/mkapfs.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "b8afe3d1bb17466e4654dca4b8a5c9ec13a21f70dd6f01512b810da39c1ffc33"
+    },
+    {
+      "path": "kernel/tools/apfs/mksparse.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "fa52f14304bd392163d72b854b4a7247fbecff8d09745b34c4443a213964961d"
+    },
+    {
+      "path": "kernel/tools/apfs/mkstore.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "6b13af9ea9f9be54c984c34a6694defc9b501d6be7222abe479b02e5f1ddc158"
+    },
+    {
+      "path": "kernel/tools/apfs/run-tests.sh",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "e2785e57c5d14bf599148a8271087a53087db14cbac96d3179a8f2d74371441d"
+    },
+    {
+      "path": "kernel/tools/apfs/test_fetch.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "102fc171c303dbf686fd93729ee0b96b1e9980231fe949634eba65dd6c83e55f"
+    },
+    {
+      "path": "kernel/tools/apfs/test_format.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "5950a6d42ab4ea4755ec7e00ceaadf3af71b6f73d637ed4f6e6a61b5704d42c5"
+    },
+    {
+      "path": "kernel/tools/apfs/test_namehash.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "8ab3384498a594517862a645db6bac901939a35eb3cc1b8969cc7e78a0ea224f"
+    },
+    {
+      "path": "kernel/tools/apfs/test_namenorm.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "dd3ef8e499871cde86002ca115aafe1d31ea6394d9710bcf3083bee43320fe37"
+    },
+    {
+      "path": "kernel/tools/apfs/test_sparse.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "1586ca3e148d4a67cd59e7d13bf4abc67ea7df79ceaae35860b5867a8d3c0113"
+    },
+    {
+      "path": "kernel/tools/apfs/txn-probe.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "579f7a7fd6436c488334d28766b3d9ca0ad309ea1ce49cf2e5de0c411ae5d69a"
+    },
+    {
+      "path": "kernel/tools/apfs/verify.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "a8848290add8209e5c8a3061b27481efbde9f58773bc3a86e5b862713e837d71"
+    },
+    {
+      "path": "kernel/tools/apfs/write-tests.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "56fb0e9d1a76dafc9f9da077e309f2b26d68ce220f728a031b3cb07173cae931"
+    },
+    {
+      "path": "kernel/tools/apfs/write-tests.sh",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "e8c836c0b4fb0741df5b963a5b5502fe254a5093e489ad4e4d0c7e5bbe990d8f"
+    },
+    {
+      "path": "kernel/tools/backup-partitions-test.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "4bbc936d782c98e5e7459ff6282d292eddd1b55603512423b0a01e5d9d91855c"
+    },
+    {
+      "path": "kernel/tools/backup-partitions.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "f8214cdadefb1fdf39a70e0168f24eb0084d1b447035fc9685be071420deb6ae"
+    },
+    {
+      "path": "kernel/tools/boot-args-test.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "bb5715b41955decc796d82b0ffea6a22a4a57007c72e82676a3ebdb9d3db4a1b"
+    },
+    {
+      "path": "kernel/tools/boot-args.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "9349abb0b8a40ec76cd8947c40b339e29c35da5dea474e78e4d45c19b7cc46e5"
+    },
+    {
+      "path": "kernel/tools/buttons-session.sh",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "8affa973011be3e6041d370a2c03f4567b7af1ae97dac80f2077f4ea2f3a5ac6"
+    },
+    {
+      "path": "kernel/tools/buttons-watch.sh",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "eb3ebc04058268a4291878b944d79e82a2dafaf8313a94a5116bb7a2031b73fc"
+    },
+    {
+      "path": "kernel/tools/ca-metallib.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "03d7ce718902033b5d8df790601f71128e07e130badb41a7422b733625d9a02e"
+    },
+    {
+      "path": "kernel/tools/ca-profile-test.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "72da142160d6556791598d6810caf53bd4c0cebffd4a2ded40cceffd45b3848f"
+    },
+    {
+      "path": "kernel/tools/camraw.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "d0ad43f9bf13b4700609a5993050ea0a013484c85e92ab84796414ed7e9a2692"
+    },
+    {
+      "path": "kernel/tools/camsensor.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "4ae45767732f6ad5a95037fd402b9a060d43da794b70c035b36379449ec407fa"
+    },
+    {
+      "path": "kernel/tools/camtuning.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "311f8996b9fc980a05e3c6bc8bc9d5d5256f7104a8f435807bb80fe17e6cd74a"
+    },
+    {
+      "path": "kernel/tools/darwin-write.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "04b5b111700d6a576753eb4dc18a160d120b60337a45e1967de5766a29c4c6a5"
+    },
+    {
+      "path": "kernel/tools/display-cache-test.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "1e021e8caca8f7e2a4b2185cbc2e3eee473fdf5717159255f091aa378d3f6a8e"
+    },
+    {
+      "path": "kernel/tools/docs-check.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "d56733828fe71a964c36a7e4d64760b980d734507041166c9f41766d257b8b6f"
+    },
+    {
+      "path": "kernel/tools/docs-gen.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "58249df1ea191d10648599d8a3e97cc3628015a6d5a78f5a4eff3cda279a67ca"
+    },
+    {
+      "path": "kernel/tools/doctor.sh",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "5283a2f0ed4ed044d73c6655f15be2a47f9d631e7bbbfe6da53d18a55407ef15"
+    },
+    {
+      "path": "kernel/tools/drivers-check.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "f0ce87051e471748f0cc909343ce5f32aa37b13438539a16e2b65872fd268262"
+    },
+    {
+      "path": "kernel/tools/dt-thermal.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "e598bdfa820c1aca64898b7b63859a2602929fe947f291f0fd1e8aed9da31705"
+    },
+    {
+      "path": "kernel/tools/dwmmc-clock-test.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "33f56944fea822463d7ce8e540ac1fa54b2850a68e2eac0c5996025127495c0d"
+    },
+    {
+      "path": "kernel/tools/dwmmc-test.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "223af2ffe521689407649294082c4e40c80962d0e4fac9d88d62d5783c58e5a1"
+    },
+    {
+      "path": "kernel/tools/emmc-log-record-test.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "a353b4b50b94c1ea557334a58e9de7382f7016596fba8b30128052452be1a96e"
+    },
+    {
+      "path": "kernel/tools/emmc-log-writer-test.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "42bc91a97c9f536d3c0f71eb976f0d5712fbb301d5da5024ab45056060b7e488"
+    },
+    {
+      "path": "kernel/tools/fdtbuild.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "14ea94ee62d9497c2a0a17818a68b4ed5e433f1c47688fdae6bfdb6978946d30"
+    },
+    {
+      "path": "kernel/tools/flash-fingerprint.sh",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "1963eeebc5595b8e9c3f6119e13e7241ef9c3bdb997a0ba0d985a1640a7956b9"
+    },
+    {
+      "path": "kernel/tools/font_trim.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "dd7b7bbd37bb11140f05fdb72e1b10be014a7f51c68ff15cc773989c77fb5331"
+    },
+    {
+      "path": "kernel/tools/framebuffer-density-test.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "0ea2f4d939fccd3811a31741fde0a96b4c3561c3def67e0987aa4189f741513a"
+    },
+    {
+      "path": "kernel/tools/frames.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "4bae4bbc6ca5a781731d6b8715e4d0d501d22483270ac056d3ea67e5856f517b"
+    },
+    {
+      "path": "kernel/tools/guard-test.sh",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "ab129de59ebaabaf92539b680a7bc47c8b6cd62c89a38fb634f138c0e2d4f137"
+    },
+    {
+      "path": "kernel/tools/guard_test.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "6f9936b4c93f3d638f1a4940afca6a6cd4ed64827539a295272089cb6f5692a2"
+    },
+    {
+      "path": "kernel/tools/hakios-config-test.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "4c781f112619db43eb570ad74f104033167273ac8fef059db833837cae9da1c5"
+    },
+    {
+      "path": "kernel/tools/hakios-config.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "9df6e3f237b8da33a0d65854a17cf479a84b953d79bd197166a35a099c67d477"
+    },
+    {
+      "path": "kernel/tools/hakios-device-test.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "3f1f08eaaceee4c71e8c693709ecd467685a022ce4c1e62391d271597a437b4d"
+    },
+    {
+      "path": "kernel/tools/hakios-device.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "e5439a13cd7edba75f2fe8c1d46f177a28fe384fa704b4b576303b6b8343438a"
+    },
+    {
+      "path": "kernel/tools/jb-preinstall.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "3ae401a585209d0dd9ccdf7f204239ae4a1d303ad0b7fe47f1398014766f8b35"
+    },
+    {
+      "path": "kernel/tools/kernel-delta.sh",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "4b396f6cc8e26204fdd673853870cb9f7d4a05ec6cbf46290885ea1bf82a551d"
+    },
+    {
+      "path": "kernel/tools/kernel-version-test.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "37ee831c1cd97746911e03affdcdbe0966765ecded32195a4caf10c974d4f208"
+    },
+    {
+      "path": "kernel/tools/kernel-version.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "a2ecca891d43beb11334e51b680424388397f4c75742f59808e2eb2cf4357a1e"
+    },
+    {
+      "path": "kernel/tools/latency.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "c39c6e70c56216a46e82e5f67365a21253a6b2ebb580de5b586e5a99ad0ec435"
+    },
+    {
+      "path": "kernel/tools/m2v/adrenometal-ios16.patch",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "7a135725831efaefda4b5d5ec129529b97d7b18ac06901d6c34fcd49dfd18d69"
+    },
+    {
+      "path": "kernel/tools/m2v/ios16-compat.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "0e9aa9927d6626ba9a6951fce913f6039c826bcc1e7eef935ab696c9b1fd1f8d"
+    },
+    {
+      "path": "kernel/tools/m2v/metal2vulkan-hakios.patch",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "c958c3f2879d1f1710528529fbfe09866e782b0efecca63b2fef068ee9d9dbbc"
+    },
+    {
+      "path": "kernel/tools/macos-bin/README.md",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "01daf0e40ac81468f09e10a4a3a002acfa12508d14c756093c041dba6969f28b"
+    },
+    {
+      "path": "kernel/tools/macos-bin/flock",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "2b5888ab1f05ab27ee9e7ce80b84170251ccd12c9d91584a3451c6431ae30194"
+    },
+    {
+      "path": "kernel/tools/macos-bin/sha256sum",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "e4392a96f8a7860b519358464a2e33bb721d890ad1779c636d19f7df63d8b013"
+    },
+    {
+      "path": "kernel/tools/macos-bin/stat",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "097483dd723185827cb9f6748ee9389f52b18fea2e692937fabd4281b3e9c9df"
+    },
+    {
+      "path": "kernel/tools/macos-bin/timeout",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "e29cde2dc475b9e9fea65623b5e93228cfebdc064fb01c1b21c5df5fd0c53006"
+    },
+    {
+      "path": "kernel/tools/make-kernel.sh",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "228652e0991e866ca88dba61d7a4a0609c86b89c3f2eb0e89441a5f982112173"
+    },
+    {
+      "path": "kernel/tools/media-method-test.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "5733e61cec62fcb8981e1635e3a66a1c5a3adb551506f092a08862079912652a"
+    },
+    {
+      "path": "kernel/tools/merge_metallib.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "5d3caca0a562621346d3447f227d4f5e5b0f4d79a21bc9a39e2c1fbd7ce6c0e1"
+    },
+    {
+      "path": "kernel/tools/mesa/air-frontend.patch",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "c29e06eb539b713b8bc5340e37a49d3e39fb16426da79043ec2b49fd3953737a"
+    },
+    {
+      "path": "kernel/tools/mesa/air-ir3.patch",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "ce474060257c128199f9dc87a62ca40efc6ab7cc1089273c6bd59ccb7cbae86f"
+    },
+    {
+      "path": "kernel/tools/mesa/air/air2nir.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "efa6224689282e5752573ea5b797bd1519bc24d3cec455cd3b28580c9d5c3618"
+    },
+    {
+      "path": "kernel/tools/mesa/air/air_bitcode.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "ca969c530025038e7370c4291ea3cb47ba770c638f238c58b4f81eb78251033b"
+    },
+    {
+      "path": "kernel/tools/mesa/air/air_bitcode.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "0b13de6db8417b1fa45f140a3bc454e92d693721a9d190d821f1d282caf02fa5"
+    },
+    {
+      "path": "kernel/tools/mesa/air/air_intrinsics.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "f234c4134cdd087d010b9ad7c5640ec36a716d340aa3c77d91ff2c095e131bb2"
+    },
+    {
+      "path": "kernel/tools/mesa/air/air_layout.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "dbcebf6a54c508264cd6dde1684913732a3d3beddac01c18785bc4e2682a0063"
+    },
+    {
+      "path": "kernel/tools/mesa/air/air_metallib.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "934bea3f4f338ba8c727a85c9a4c3cbe070fb594695f704238fff1f352bbf4b7"
+    },
+    {
+      "path": "kernel/tools/mesa/air/air_module.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "20dabdbb4142fd1b8d45c65976ea2714962977146c2df44f2dc20c5b88123948"
+    },
+    {
+      "path": "kernel/tools/mesa/air/air_module.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "829ed284d3f0c815aff38c08d8483b781e904ed5f5e36643076e3ae4554ffee2"
+    },
+    {
+      "path": "kernel/tools/mesa/air/air_print.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "bf69217c8ffa6f1c68e837660a8a14a4ef683d68bb00e3b0a74ae54a37651f04"
+    },
+    {
+      "path": "kernel/tools/mesa/air/air_private.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "8f88a010f10f47d0875e38a8d42acb3b8c2ead3f823df073f33be315470743ee"
+    },
+    {
+      "path": "kernel/tools/mesa/air/air_run.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "01f7c5056ba3d77b0ad3ef63b46e169606aabaeb2de514c6f04c76e4b9e5db9e"
+    },
+    {
+      "path": "kernel/tools/mesa/air/air_stitch.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "2fbd96455e7213e238885fcb8b713968c2da46bb65083e953cfca7b59e942473"
+    },
+    {
+      "path": "kernel/tools/mesa/air/air_to_nir.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "6a1b27ef1d744ade7b03d573f1e0e5a305eb6cbe790e6980ac9947a08b97a6e4"
+    },
+    {
+      "path": "kernel/tools/mesa/air/meson.build",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "9762c9232070ce206ad3bbe51f3638133ec67c8fc85c47087bbe4fbc64014c31"
+    },
+    {
+      "path": "kernel/tools/mesa/air/nir_air.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "5d23150ed33786f2a49a59b2e181b6978bd10095b8909d07da9a4b6ccb0da81f"
+    },
+    {
+      "path": "kernel/tools/mesa/freedreno-darwin.patch",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "2a9817e2e575a5f768cf778204f502106de11b8a88a5beb8c19fc4548c5c9c6a"
+    },
+    {
+      "path": "kernel/tools/mesa/hakios-drm/hakios.drm.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "1b313282a24da45b71fc6b1637bea41fb63f2f14dde64aebc759d83812b42356"
+    },
+    {
+      "path": "kernel/tools/mesa/hakios-drm/xf86drm.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "8c54b98f5b398be4f76759f36d26e0550ea674bcf2159352a41bd2efba61af91"
+    },
+    {
+      "path": "kernel/tools/mesa/ir3-round-default.patch",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "2065de1cb4fc0fcc5f9a8fee214b6a5112ea6182f983f192e0c235980879bb8e"
+    },
+    {
+      "path": "kernel/tools/mesa/ir3-shift-split.patch",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "26ca6b1e512ca3a43bb2d1cab3942d247f914e5a1fa34432462ab93d33c369ef"
+    },
+    {
+      "path": "kernel/tools/mesa/ir3-ssbo-subdword.patch",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "a545a0cdfec12b604ae0acca7d7b5b4b8c7f5789029ba3e82eeebbd40414624a"
+    },
+    {
+      "path": "kernel/tools/mesa/osmesa-es-profile.patch",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "9ca1cbbd0becbc1bc57a5cd616d60b8a53e3e42f4208241b34bded686bcfb0bd"
+    },
+    {
+      "path": "kernel/tools/mesa/turnip-darwin.patch",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "a7ad6e93b7e94bb6ed479fcd72c73e40c2e3045528875bf3c3c51246ce82b1e9"
+    },
+    {
+      "path": "kernel/tools/metal-cache-seed.sh",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "dc51235e45a7045016c1f25be34252c052c80107ca571d910f33446e643b43ac"
+    },
+    {
+      "path": "kernel/tools/metal-plugin-test.sh",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "d2e5b5f81486884c40d2e3962c41bab83cef37b0141170db803c460874b222b6"
+    },
+    {
+      "path": "kernel/tools/metal-run.sh",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "21595bae7f1eae8cbb849fe3573dba782d2be183809794f5653c4922551ea0d7"
+    },
+    {
+      "path": "kernel/tools/metal_plugin_test.m",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "8bd3b4bca31984dbaaf26a0f2dde133bdf4a076a53ee3c7e12f768ae0ead0a04"
+    },
+    {
+      "path": "kernel/tools/metallib-test.sh",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "c004c86b555e0cb111d1966741b1d3d4e9075fcf1193e778b75a584d423b9cc0"
+    },
+    {
+      "path": "kernel/tools/metallib.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "0521031e9388fa39bc5ba91aae7d673d2fa493442ef7d47166e9725b8098751b"
+    },
+    {
+      "path": "kernel/tools/metallib_test.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "7eb9ffd26f1aac689feebcfa0b29af1a435a2081a7f9458ed5904640557c4e8d"
+    },
+    {
+      "path": "kernel/tools/mk-ath11k.sh",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "1433a8f7eb77d61f5fd8dce91981d091ac5dae952105884cb5bbb0ad9c5fbe1c"
+    },
+    {
+      "path": "kernel/tools/mk-jb.sh",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "0f944321fc538d7ba9056652b63dc4b463aa645e994b4d4ef567cdb410e73940"
+    },
+    {
+      "path": "kernel/tools/mk-libdeflate.sh",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "76c39b2d83282ba0d2c0f927d3476bf8e9bd4cc3b2ec74a9db48c8bc46a00dad"
+    },
+    {
+      "path": "kernel/tools/mk-m2v.sh",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "600202f6e9521b3cdad1f8c2d8e4b6d11543d84c866b8cb6eb509504075a8ad3"
+    },
+    {
+      "path": "kernel/tools/mk-mesa.sh",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "dc662cc619e843aea9c3154df8635bb945745ece0ff65e992e2e1d3ec0bdb116"
+    },
+    {
+      "path": "kernel/tools/mk-turnip.sh",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "16e8c2b04f57fc659d425462a97e47fa397f4d89f867cbcbc317c0f858eb5970"
+    },
+    {
+      "path": "kernel/tools/mk-wlfw.sh",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "af8b518b520ed3834e502e4a4b40d46804599288d681c732b201c2a861d9cf72"
+    },
+    {
+      "path": "kernel/tools/mkdatavol.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "269b525eccc5fbd853f56f0e98579009d2f3e72c092f70c56bcad89bebafc694"
+    },
+    {
+      "path": "kernel/tools/mkesp-test.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "c9f7193604e3386c4e779534ee5ccd3e2a1d1f58c47b534d6c57b102a45f00f3"
+    },
+    {
+      "path": "kernel/tools/mkesp.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "40ad044422806e61b7c877fced0d962f9144ccb249bb1816b4fae8faccf8e2a4"
+    },
+    {
+      "path": "kernel/tools/mkjobs-throttle-test.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "7d043a596f8d33269f3f2982c3312433c540414c851ff502390bde7eff0a8b1f"
+    },
+    {
+      "path": "kernel/tools/mkubootimg.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "067dd4c5f8c6f28b51ee2c9bf32b01b0cfaff9336065febd86ae4870014a51dc"
+    },
+    {
+      "path": "kernel/tools/modem-cycle-win.sh",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "6a8b8b6558bbe5a8f9790e7717ad247575db444adb8a143f902aaf884e92996f"
+    },
+    {
+      "path": "kernel/tools/modem-cycle.sh",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "7a079a1ae14ad109eecce7425f8b7a272d0be04d61bb36dba8066e9a77979dbf"
+    },
+    {
+      "path": "kernel/tools/native-keyboard-test.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "8def0435aebe049d78d96a3e49a93003b66405d39fa587e4e0642a03f1cef467"
+    },
+    {
+      "path": "kernel/tools/native-status-test.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "7ac0959508a094b7399467e41cf8f5a2250286c0ef4ca1d5ccd80cc4f123a1be"
+    },
+    {
+      "path": "kernel/tools/native-wallpaper-test.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "9586cc611f82d90226de846a0797201d3bc06cb82d8ea470880cc8431b625881"
+    },
+    {
+      "path": "kernel/tools/new-device-test.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "9022d82436e9b05a54c7a0c2ff98bb5f61deb69f3c53b13d48c66a42f9aae74f"
+    },
+    {
+      "path": "kernel/tools/new-device.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "c43ad78d7864a57b332f6b2727ce096b8f5b50a12147f2eb8a808eba157690d0"
+    },
+    {
+      "path": "kernel/tools/new-workspace.sh",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "3becf03557965e3e2f7e0cad5c76ec3d130cf56692e65b6ebb090bd3e8afe17d"
+    },
+    {
+      "path": "kernel/tools/observe-stack-test.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "395011f1e82c22776ba960014c185534fcbbb4f737911dae5114f207d9ca8e7a"
+    },
+    {
+      "path": "kernel/tools/provenance-check.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "fa0385d6c639c54e0d01d9d09709d5c1f06d8bbe404136e7af6146b1aa20fb77"
+    },
+    {
+      "path": "kernel/tools/provenance-test.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "f60e1086c7f1c950a78fc68c8fdec7f3dc696f79bdc1be7c7697977655f4a455"
+    },
+    {
+      "path": "kernel/tools/provenance.allow",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "ac8d06e102a81525f10ed0ccbbe35899b1cf120080cd827fb317a7d88bf1fcc0"
+    },
+    {
+      "path": "kernel/tools/psci-alias-test.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "dee55ec4ca0c7617b0da40bce4c43533ce9b90ff37df8d34a43d46d73d75b054"
+    },
+    {
+      "path": "kernel/tools/psci-gated-test.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "310431354ba83fd48ff5017aba445dbd72019699908f41724fe6f9907e97f658"
+    },
+    {
+      "path": "kernel/tools/psci-reset-test.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "8a3841f12a7a18269de5e2695012fd4ec6c06bb5373ec25d6c16220c22ef49e9"
+    },
+    {
+      "path": "kernel/tools/psci-trampoline-test.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "feccc1432d7e77a807a82d93a0cf26ac1f517c63b04f0442e8f1e76d2fc18c8b"
+    },
+    {
+      "path": "kernel/tools/publish-repos.sh",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "c74efb7c89913d2cdeef16684ef35b2bffd8dc05cedc75a7607052ab2f21d83d"
+    },
+    {
+      "path": "kernel/tools/qmi-test/extract.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "2653d424db63278fd965d150df5878f1f2a05b30226c9474d0917dec8c74bb32"
+    },
+    {
+      "path": "kernel/tools/qmi-test/run-nas.sh",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "b7d89968a39f37f2d6c2302475675d46d8605824b878ad923c4c92bb59c827e7"
+    },
+    {
+      "path": "kernel/tools/qmi-test/run.sh",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "a9d7ca584a52affad7fa3172499d756b43f3ee5138ae2aeaaa19f92bb8cdb24e"
+    },
+    {
+      "path": "kernel/tools/qmi-test/shim/linux/mutex.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "0c32f177fe664f8db286472ea001c3956959b2a0d24b0d4a6ecf14c5f19d2b74"
+    },
+    {
+      "path": "kernel/tools/qmi-test/shim/linux/soc/qcom/qmi.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "423cec52cd7f008d9ff2dda3826c5c776b4e705ac4b24f69c96055955d7d5095"
+    },
+    {
+      "path": "kernel/tools/qmi-test/shim/sys/systm.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "771c550a63c2e7ec31481c728a402d26875875316c8916073611e5a4a1af4013"
+    },
+    {
+      "path": "kernel/tools/qmi-test/test_nas.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "23bf4abccc6289db82f1a476ab0516f7d9228b14237cdd8fba90f60bfb15d47d"
+    },
+    {
+      "path": "kernel/tools/qmi-test/test_qmi.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "94360774565f3f49689dc15c79550a8fd78b2c467db6c8ad9fee78540250f85f"
+    },
+    {
+      "path": "kernel/tools/recording.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "c10cb1970fcdc35c3fa892ff7cb233f36a0bf55ab54615ca767b9c763d8a94f7"
+    },
+    {
+      "path": "kernel/tools/soc-args-test-aoss.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "bc950aaeb33ff5c69383c2c2d87a0f7b7a32a2a5f908501e615650a933149ef5"
+    },
+    {
+      "path": "kernel/tools/soc-args-test.sh",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "81267d01f6377c1696b28d28c842a492e074da5f4086035810b0b75673135ce5"
+    },
+    {
+      "path": "kernel/tools/soc-args.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "e0c9aa0624f72bf2580ebd2c15cfc509550c0681275099c030b7d7500ab9f918"
+    },
+    {
+      "path": "kernel/tools/soc-only-changes-test.sh",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "8ad9d38e2ceaf82b259010e231be3b8791587e9fee993f7b088def6fde3abe08"
+    },
+    {
+      "path": "kernel/tools/soc-only-changes.sh",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "4fa8d27c0aa14449014b5dbb167421e909b20770b56313999ea7d1b2173382b4"
+    },
+    {
+      "path": "kernel/tools/sound.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "c53011ee136d084a71ef3fa57ab6093f9d13eb54a758e85ed012d0741af91e25"
+    },
+    {
+      "path": "kernel/tools/sparse-split.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "b1494eb60a580c1571bef111520fe67ba7fea77fa95b9dec23f71dabdf3903d1"
+    },
+    {
+      "path": "kernel/tools/touch-app-info-test.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "454ab00adb3e9c83ba40350df815a57d20459e38f435867ce3968b42f95ec351"
+    },
+    {
+      "path": "kernel/tools/touch-firmware-status-test.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "faf81e645da17a5897c65c237db84b9fc72bef487617b64f548c2582e3003b32"
+    },
+    {
+      "path": "kernel/tools/touch-power-test.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "d4ef0abbcad4baa39fea70b0f08dec3be532e5d7900f730850eba86ed0f1a644"
+    },
+    {
+      "path": "kernel/tools/touch-queue-test.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "b99830c272abd870a8a1192f87d59bf707210edf52d568f13f0ef6fc89ffdbcc"
+    },
+    {
+      "path": "kernel/tools/touch-read-test.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "a0356afd6e45b6cc77c17cfadcf90057bf4fed1a404570671c833384747dcdf6"
+    },
+    {
+      "path": "kernel/tools/touch-recovery-test.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "2318754c601860848f380a6791a5374e21e9a9059b986b24f477740700f1d02b"
+    },
+    {
+      "path": "kernel/tools/touch-report-bounds-test.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "bf94b1e4ba9f6b44d04aca79d68efda634a50377742dd7ccc663ed6ec23c64c4"
+    },
+    {
+      "path": "kernel/tools/touch-startup-test.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "97d7fa3b4c4d95f88da05f2115da5db9471108b852c6083e5f6ed92e0b7fac0a"
+    },
+    {
+      "path": "kernel/tools/touch-transport-test.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "c4b39247012c9f7a0d7f7dea261fc87de9994fd94be698ee0c9a70d5405636ab"
+    },
+    {
+      "path": "kernel/tools/ufs-super.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "8ca3695cf79be4d95a7b071a1414085aa47d8c03f72d70de7703b12a914645df"
+    },
+    {
+      "path": "kernel/tools/ufs-survey.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "18b207b1399f8cd218ceb9b6fa658d2bb44fdb1bb36a929302cd79faa1d7ef43"
+    },
+    {
+      "path": "kernel/tools/ui-method-test.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "64d778a1acb19cbc4d59e48d6df11644c7f1d7b02087d710c03b0e2f1d0cce8d"
+    },
+    {
+      "path": "kernel/tools/update-prebuilt.sh",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "a9ebbc4fc4a3a3beeeee456d7cc59786544a92a561a053d2aea9cbd05d18da58"
+    },
+    {
+      "path": "kernel/tools/userdata-carve.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "1d51ae13bd93751725ff70eb7597ccc4448ca9f8b1453638eef8d1c41bf7e6eb"
+    },
+    {
+      "path": "kernel/tools/var-store-read.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "4362f444c61382674fbf90e1276c2864d0611ed262c307d6f62e9aa4a70df897"
+    },
+    {
+      "path": "kernel/tools/varcheck-test.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "6f3962a89714f7b68df7b20bf866bc9c5756dd7fbb7772d312a579df1662325b"
+    },
+    {
+      "path": "kernel/tools/win-bin/flock",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "d8a19f43209ca401bb415b91ef293de5bd6563cb097a0996f397c370261974df"
+    },
+    {
+      "path": "kernel/tools/wpa-test/reference.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "3045801af1fae5b3d14ebf227f4c93d319bd6a0b8d609dd878f110ded97d8b59"
+    },
+    {
+      "path": "kernel/tools/wpa-test/run.sh",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "3484fec1c60fa979c7a7841c47683569bf99e05a4caf9d4668516359b3408b0b"
+    },
+    {
+      "path": "kernel/tools/wpa-test/test_wpa.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "80fe5fe46f5b083e5eade929a8f916963c8483d995319a272376d7d48e19e1cd"
+    },
+    {
+      "path": "kernel/userland/build.sh",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "fb10d6621e8f1fbdb20460d443cec32588d7c77961f757db913d68b39d585328"
+    },
+    {
+      "path": "kernel/userland/com.hakios.demo.plist",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "91d3d94e5ad4b82ee5641b8b54318b4e44e1fed1a90cce1f3c1646fe86d97bbb"
+    },
+    {
+      "path": "kernel/userland/com.hakios.varstore.plist",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "29e3f49e5d92e23b2e1b704cfeb76c112692630330ad15b793039cd2a91962e2"
+    },
+    {
+      "path": "kernel/userland/com.hakios.wifi.plist",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "e58739185fd70b9b00d02cf786cd42177c22f860d12478901e5c86878c1282a3"
+    },
+    {
+      "path": "kernel/userland/jobinfo.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "51997ffd7ae0d716c09f9eb2d2c6543dec0e2875a700a06caf3a45b840c75e2f"
+    },
+    {
+      "path": "kernel/userland/libmini/mini.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "4aafe4461e79a503336fc149c263d96fef7d5e9d28eaf7375ce968f838c4aa68"
+    },
+    {
+      "path": "kernel/userland/libmini/mini.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "7f633455ab782794b11e2daa04480fe27bd8d8eb4f470e1e7bcbfc77246f09cb"
+    },
+    {
+      "path": "kernel/userland/libmini/start.S",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "75024af4f60a89ff82269a7076be303bcb50779f9f1d4ef504231bcf4ea1012c"
+    },
+    {
+      "path": "kernel/userland/mkeagl.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "58fcae29a16a9df7b1177aaf56f3e9421c9d79e071ce5023f88140af15cecd91"
+    },
+    {
+      "path": "kernel/userland/mkhighrate.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "16a759421ef9ed932dc0769906d4d53f2e7606773c91a5d2fe0390a4020902ba"
+    },
+    {
+      "path": "kernel/userland/mkjobs.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "13be8e28e1d77520ab3febe348f1e5b0c8c25766f6fa23468fa3ec3a4cd3e4ee"
+    },
+    {
+      "path": "kernel/userland/rc.darwin",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "fcebb60dd8fbcebb283b7c228a24a8cdbb2525b23e15f3a378439a1b147ca720"
+    },
+    {
+      "path": "kernel/userland/rc.jobs",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "77579bbe2430f078100fc832d3f50422342adea2c0a3faa9c82bb5d09c841da9"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.air",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "a6387f8b3ba3f8daa443a9acc01d4e7101fe74377dda7bf4b347dc7bf4ab7ae4"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.air2",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "416e6bd80c14c0d8c03944d922cf323c380a84d524b8ba5bca47e0e0024eef48"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.airkernels",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "656122adb0858e0808dee29c1961e6e6e87dcca0fb3a778c72a1b68be733a7c0"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.airtex",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "e56455e19b91da47da560409ead1a71111245c75f76f10498fc5d0238d9080c2"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.apfs",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "bf5c1874cd2556d98a2b77f4eba80981563cbf34756b77f998ba4a0be6ef4b10"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.apps",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "c90d1918fc89fcbc34483cd3dbc642d218cc449969653257f27caa17be3f19bf"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.bake",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "51358a853ad744d7a3d875ff7a0ae614911d81b5fca33a71c98523d75e1a8aa4"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.battery",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "4993fded77502544772c68e13eb130982716cb8d6aa7527ab2f568d731c60805"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.battery2",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "4398ae363e4d72353ba84e861c7c0daf4b46890d905f6ba5d0d1acb0e92eb8bc"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.battery3",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "7bdcf227a385c8b62ea6ebbbccf161b9ac4a0b81635342be7ebd14756ee7eff2"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.bench",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "a2c0e6c000f16e890f6d267a6c467504767e5b2aa90f101e0df7969bca55bff5"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.bench.xr",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "70e7d3b473c3dad7b4cd2389b7307d5efeb60b3974cf5b610357faa97c28ef83"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.buttons",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "ab420fcbc862cbdd679de63f626a83330417f3062c4b042f3e5d46e9211d49d8"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.calendar",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "b1c4a8453972cd48b55100bf0c0bc09f2ef0cb5441a7d82e90e8ddde19336e24"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.camera",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "b0d08e8f2499d4ebe5c2d65437b95191ede06460e18723862b10cc2dbfd5f722"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.cameras",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "2fefb1ce4a2d5fbffd5b7c80153691e390decda5ba149cdf64518c25389e7324"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.cc",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "b487f2b9745572a5011e3c5c9e7d97e058628244279ca653058bb82feca5b0ca"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.cow",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "2b64e922a810348d34cbb7cc2252103346e597294d3fa6351489f8de05ffdfa7"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.cputop",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "9d20f6fbf03e1bccf0171a6bd6d240a89a6bfc9a8e9534d71116656bf0afb39b"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.darwin",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "5781adcc187c2f06af514c3fa865ba58c402e6dbe7bb9bec04bc3417990470d6"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.demo",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "eb820a61ac6f1a770c9734aba41d5e9cb9cb912c99039d317603a3dd681b51c2"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.fairplay",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "6493a374b42d49e95466880fa6e82fa4493a772b73bb6e483277d88c48268ae7"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.flashcache",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "22a826303261d8150d90c864d69ec5647bed3d7b67415ca38ce188af80628dbc"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.flashcheck",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "a442c0dff4e96ac5b9ddfbbccae23aae960474401f4bc03bcfe0827fe533543f"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.flashlock",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "65c6fb539f149ef6bbbf3b6c8fc16f9e25a7cfd3d0c0b86e0b288bd0963a6683"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.flashroot",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "56af39b96893311ce4eaef4cd999efe3cae5e053a3fde3a758f5347c543818e9"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.flashsound",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "59a1d3b7aa78450859374356dfd74b81746bdf15cb509a52cffb10349a2bf5e0"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.fonts",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "ff2ed930da85499ceac668d312cfb7d053372f545b953ba0e1dc6def6685675b"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.fps",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "9dd99016f1c2ce382a144e1440d164c334526f9c055c8662e69531dff15576df"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.gfx",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "4f509923c30d626572457d2fca4f3d1aa5a86936f7aa2b16f388d4ad70b35422"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.gltest",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "1bd0158319a8f50a63084115cc2a0d27631eb6273bab86fa067871dd2e78cb63"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.haptic",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "01c4f2f2f79209a85f111bcc90cbd3a3606cf6ec1fff40ffabef2781b456e927"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.haptic2",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "75d3091a0d1cb4b84f1b6553501e25cc7f9f720cce53d094ad8698ec97c29452"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.interactive",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "9089620a113e381f7c1bf968a7242d1a1ce22b58d2d5ac6774cb986192c0ba3f"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.jb",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "ee833eb3d458432060ffbf16016928e9082cd9c5404d734b1bd601115e89df52"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.jbreg",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "752efbb4f66d0755e38a184abd76b0ee3154db831811e75d8db7faec6e2aaa66"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.jiggle",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "d2814c5c1522a353904ab485fc44551b2aa9b9ced94bd437c930bf963abee309"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.latency",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "953af66cdfa46e99687504c216368e298e740af8694ed11e202c5f803c313181"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.launch",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "7d033d1b614bab02d2832e4d25acca82cf5e3f0067ca084104d5774d0c66ff5f"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.layers",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "eb49e1bbbe94f9832c6a4645956261d1e0f3ea6eadda40aef5c7f72eb190b617"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.loud",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "b8337495e47442f69b91771fb6ff1bd3584b3193167ee1eb3cb0d3f651752eae"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.m2vtest",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "64b088f12d4914df05a247236b9857987191807aca277830f7e27b6756396707"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.metal",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "1d7ccc699a55a91ec04b35cb7bda5cb18572f65db1fe6efc405727ba5603b7ca"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.metalprobe",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "eaec51149a4fc1b74d6e3fde971c1b5da1ddbf6eb30ddfb10b0a4ec509a5a633"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.mic",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "86aaa95253b3d9a5bb747c46d0086ffc516a6f7439d40dde469483101c3388f8"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.net",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "817ea1179c4df0c833812962eb8f612651d584f40173090acb9ec8ea545f8cf9"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.persist",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "81a9449de17f64e4471aa700c0650c76905ce5b380db7d152dfaffcea3c873fe"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.persist0",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "ce2e5c023dfedd616b67f9096ffde3eb85512583462ff5b3d16f622389e33d5d"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.persist1",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "d3d6d9bf0f8326f6541923f21a244bf847415f5ce8b142a91b143146c7e119e3"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.persist5",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "dc49c64a7feac037add5e28ce59798b5ea0285d7e66997983e9354089b14c7d1"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.persist6",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "8657e0d3ec2bf402f3df3e86c16fb1550bdcf2e8d6524024cd536d7713349c05"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.photo",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "5a009992b6df0bb4a9d618e2bae4b205e75b4e758756b251d7247b7680aaed49"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.pl",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "eeeafcd164f2bffa09e85bbca001d85c15a873b048201f011fd5a97014312769"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.preinstalled",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "79e2acb436d14cf97c58fd1cd01dab3e6355e7ed3746b1296ea729c7704d1d9f"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.safari",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "ae655f18029f55de6024cf84bd39305eeb96383d69f39b9b623ec2cb1ba8945f"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.scroll",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "f41b7415cf7a0d79094fec377ddb5effb4a5196c29d6f705f4fa8b939eca4c3f"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.sileo",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "b5afb5e92d7a063c5120ef1980f06a80a3f5ae9a1ab7f8f7276024f0bdcc4a46"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.snaps",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "f782cc30dd4e6b7ff47964aae4af582b33b4962519d2332dba43f05d16d33016"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.sound",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "291eeb5a0510bc6e8c32525df7d6f9371ec46eb227b262838cf0ab4269310dc5"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.speakers",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "ff90b1d1e13dac286caf74442a84b0ce9ade39d74d5f9ad3489ff515b033289c"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.speed",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "0c00cfcf3ad4614e6b6b8cb0a262d08e797987aaaef2ce5f326edcee2ffea0e0"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.ssh",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "75b775bdc8c3a33c7da6dd0aae07cd2405088b28401ced6cebe60b76739ef370"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.steady",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "466484543f716f6b5872ef2f03082964b265f79b755aa3630abdec777979f81a"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.stress",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "94172e1b2d78b86d1dd7a1ccbff7aedcef09504483676c60b4066cd6e4c9be80"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.strip",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "edfd1866894532c73a734d6dbb239283be40c5aad29e89d28ad9ff24d1bb5260"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.switcher",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "a6bd126f7e36cf9413ac278a40da32bb9c1ed2cd1115bf83880769abc8d18b49"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.torch",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "0cf3a265ee390aba19d19f48faed5debd5cf138504fe0551799bbca3c5a24255"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.tour",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "8fbdc429d33aefb232fb1a49ee791176a5ee57defd07f9144d82a3881280b152"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.tweakinstall",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "69784c8ba4915e03b33f005149ec60b506efce8a4b649aa086c2da9fe9505947"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.u2f",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "7f78980b5450b9e6c28da5c39785d91e289cc8cfe00caf6fe707bae2930c900a"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.uib",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "c65d12618a2dc55030c21c8f42201e44e11cd7e70946b72adc69b30909cfbecd"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.unlock",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "69779d11741ffb44170bb719fd26b52430ecedde0382781badc47479859ae17a"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.users",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "4cc0b484decfd7e3384af131f778bb3acffdf5f309219350ee1367318da82010"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.vblur",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "cc1ecca613fe67454509752075bfa1d0ee04d1be049e0c5d18e7e1742632b4d9"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.vktest",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "cab825f698a51b537f983d3e393024ebb9b95f9dfba7e579195b3494f1098ff9"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.voicememos",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "b23b330041f83ebec4301abd2da1f7b37cc89a3b2eefc1b8285c0abd5329533f"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.volume",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "9706081d86849650e521522a92d6f26e8a66d58a91c28a6fe2fb183b1d9604f0"
+    },
+    {
+      "path": "kernel/userland/rc.jobs.wifipw",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "477b2f11fbe2a6d8205bd74ee1c0339aaab146c3869e36c7df7d76917f9492cd"
+    },
+    {
+      "path": "kernel/userland/rc.launchd",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "7e8fcd0ff6ea4b1db356842d901ab75c3ef8364cb9669b7ee7d3d1f0f09ed435"
+    },
+    {
+      "path": "kernel/userland/rc.u2f",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "2f9f13631c9c15d63750b46252d1f634bad5545927218f3516b8535ccf8652ae"
+    },
+    {
+      "path": "kernel/userland/seed-migration.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "8594482bffd93d90a0c56b3abf7a807b82e5e5c6741aff69c5477ef35e983498"
+    },
+    {
+      "path": "kernel/userland/src/HakiosMetal.m",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "683e4fd67fed72233fc734577dd361063b69da7c3e6b17a8a2ef06ae62757b14"
+    },
+    {
+      "path": "kernel/userland/src/HakiosMetal.plist",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "3769fa7fadfa09da5aad20b0e07f09c92fb307fc1630b9dea394c0447f975dea"
+    },
+    {
+      "path": "kernel/userland/src/apfs_mmap_test.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "874f5832f74b507c9d2f02fd65e1000afce6f94e5a926ca77213a6df0a74a45c"
+    },
+    {
+      "path": "kernel/userland/src/audio_plugin.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "c5262e037b8732861c723ac55fdd7559686313edd40579e49cf5b3766143f7eb"
+    },
+    {
+      "path": "kernel/userland/src/audio_plugin.plist",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "faa6455af02b4f2530ea4a8978749451411eba42e9dbebf6c73b85a794206efe"
+    },
+    {
+      "path": "kernel/userland/src/battery_test.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "e4487c29ae1637ea567b0b68a887b98063a9b48590cd7e5278ec284f37112823"
+    },
+    {
+      "path": "kernel/userland/src/battery_test.entitlements",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "91c90d94079e9e48625c0a82ad278cb51e363642cad72d4f546d0b787d40344d"
+    },
+    {
+      "path": "kernel/userland/src/ca_profile.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "33d4b62ea46ad6736a591b0f6740838a6add2bb454bb52730cb75f3d8589569c"
+    },
+    {
+      "path": "kernel/userland/src/camera_avtest.m",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "77d9b83e8b211a419f3df4e3385f9754fec5d5377caacd7fc2cb8628e637ba17"
+    },
+    {
+      "path": "kernel/userland/src/camera_device.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "80e550523ad4c06d23e8d12adc83cb9204f399f2cc35f42a519d3080240a531d"
+    },
+    {
+      "path": "kernel/userland/src/camera_isp.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "78e18998ebecef2ff353a352bd6a0b1cbc67ad2e58a6be9e49f0b084d22c704e"
+    },
+    {
+      "path": "kernel/userland/src/camera_isp.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "6908e7e176938d3808ffb85b5f06feacfdeaf07977d5ab63f58b45657eb2f58c"
+    },
+    {
+      "path": "kernel/userland/src/camera_test.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "942c3a74ac8c485e06789de87547a242454417eec562c65d3cc0c684c09f6763"
+    },
+    {
+      "path": "kernel/userland/src/cg_test.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "3bf28316ca2d6a59e44c5e46cd836e6c36d92cd74a636fe07047e518a5394b5d"
+    },
+    {
+      "path": "kernel/userland/src/child.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "c90323c305cc67f0be88e7e51afc9f02bb75faae549390d5f747d192f8d2b53e"
+    },
+    {
+      "path": "kernel/userland/src/cow_test.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "e29e757823be6da1729d9dc2aeb401b3954b7a3638ef1f92dc2353c5fc79b5af"
+    },
+    {
+      "path": "kernel/userland/src/cpu_test.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "f34a2034d3e12fce1456a98f2625124db4739972605143761230fd158db7f200"
+    },
+    {
+      "path": "kernel/userland/src/cputop.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "5f542fb4555e8e7334617d51660f66ee1e5c3de7c512148f259334912e62dc0a"
+    },
+    {
+      "path": "kernel/userland/src/display_cache.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "87f605e652927afde1e912cc9ae00f7e45fd0702afafd8ca11665d2868accfe5"
+    },
+    {
+      "path": "kernel/userland/src/display_native.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "8c5e69cbdf1dcd2904851fe97d7260c8254a728d91b1a6b4dfc4b95fab74ca33"
+    },
+    {
+      "path": "kernel/userland/src/dlopen_test.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "3026b2b96adae0d718703a7d8f591a6cd2769c608e2b3b1ee7f40aae110649b3"
+    },
+    {
+      "path": "kernel/userland/src/eagl.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "b1165bc40c1ca58968d28b990505acfeb138579155aa3b0b27c7d70933ba9903"
+    },
+    {
+      "path": "kernel/userland/src/eagl_slots.txt",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "ab2fa428756d2a0742ca4017f812ea46918b9a2f6cb375e4582464540926feea"
+    },
+    {
+      "path": "kernel/userland/src/font_test.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "486973c8c99f71b0b82859fecf7bf02202739ccc4f14da5d14278c37a07bfcb0"
+    },
+    {
+      "path": "kernel/userland/src/fps_info.m",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "c75c20524aa6b0c285ded77b4f74edd0f21fd8b49eed7237dcbeeebc5ad5ba93"
+    },
+    {
+      "path": "kernel/userland/src/gl_osmesa.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "7a90f17b275b9f20c088850696cf9d47644bfdddee91ba0ee62a66f8de9e0b78"
+    },
+    {
+      "path": "kernel/userland/src/gl_test.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "724d6e96475d1ac64aeadfed094ba1fe61481c4ab3353acbeb4472edaeae25f3"
+    },
+    {
+      "path": "kernel/userland/src/hakios.audio.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "4d2570961b19586c5b5f38630d862d99de81c41e7e2f2d24a9650bd8996b19c0"
+    },
+    {
+      "path": "kernel/userland/src/hakios.camera.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "94af2f0346160c6339d8515803518bfe10490a947717916f70499d159a9c220e"
+    },
+    {
+      "path": "kernel/userland/src/hakios.gl.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "52aba74c5ea5ad2515c0f840d52a572420aae2dc98288db34b89a9ad3a02ddd9"
+    },
+    {
+      "path": "kernel/userland/src/hakios.input.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "9d5b49d85c4aed8a79ca4af0b2c9545ae17ff7e896de4cbe603de29b924f8c8d"
+    },
+    {
+      "path": "kernel/userland/src/hakios_metallib.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "95f248f9d8c831d0c07651a201d4ea099acdace56f1dbdb4b1cc1c57b2501c00"
+    },
+    {
+      "path": "kernel/userland/src/hakios_metallib.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "581f959e7733f6977608d29543e979397b5fc7def45ae7fcd027ba2234d1abbd"
+    },
+    {
+      "path": "kernel/userland/src/hello.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "f3c07a5e6a3f43e985b154178e8c3eaa7d36e03f62e409de1ddc14a4c0761e7a"
+    },
+    {
+      "path": "kernel/userland/src/hello_dyn.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "9407b9b15482aa3b4d83255ab04ea335ca5bc3cfb2f0f8eb69019a8f5986ff71"
+    },
+    {
+      "path": "kernel/userland/src/hfs_test.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "e9eacfee88902df15dfc0eb25d875591ea513fee0cb648c8315be7a710242f44"
+    },
+    {
+      "path": "kernel/userland/src/init.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "bba01ffa0ad6cbeeca9caa60fafd6e847aa4fc4edbc6a1e3a3e309da226a0949"
+    },
+    {
+      "path": "kernel/userland/src/inject.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "ad5fd57583374c7bcaa64833999cc41b4c710fe11dc2e794e1faa362da3fb3db"
+    },
+    {
+      "path": "kernel/userland/src/inject_app.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "b6b9241e9467d36bb7cbcaee2358fa584661749604cbbb447c7c255896ba33ca"
+    },
+    {
+      "path": "kernel/userland/src/inject_media.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "2a877a4bf440373ca50e7fb9801604155c1a6fdb86a5d5947c042394eec0766f"
+    },
+    {
+      "path": "kernel/userland/src/inject_methods.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "8c6e601ff019b54269ade17c4401f7557275e5251b841937b74ec481e544af9f"
+    },
+    {
+      "path": "kernel/userland/src/inject_sb.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "fbbbdaadbab149649043254a5a51e70036a667d2095237e134c598006a79c22b"
+    },
+    {
+      "path": "kernel/userland/src/inject_tweaks.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "a861791c2e3ac6501b8e162dc0b12ca32cb643065b164a0e98a82addae1ad3ce"
+    },
+    {
+      "path": "kernel/userland/src/keychain_test.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "3e228f06e664ba60000f27b6fd98f2ecc33edf8dcff5649f3d720ebdb76268aa"
+    },
+    {
+      "path": "kernel/userland/src/keychain_test.entitlements",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "ed31f46a129de22b11c0ae48485ec0c93b0293f6a81753bb875c9cf1fdd5cad8"
+    },
+    {
+      "path": "kernel/userland/src/m2v_test.m",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "fdec427d5e817466be09595b955ff8c04a796edaa8b7d510c5ac64f216ff73a8"
+    },
+    {
+      "path": "kernel/userland/src/metal_test.m",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "04dd0de896a9a6e9cf6c6b22215a4ad9de7bc14dcc371714fae111928bb1aab6"
+    },
+    {
+      "path": "kernel/userland/src/mg_test.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "dec5d743969941c9e9d1e4e22a79d22b3bac6b2cff8cebde53aa0fe17aab44a0"
+    },
+    {
+      "path": "kernel/userland/src/net_test.m",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "f1775c7b7bddad8d9d9a2c7f0d125e6c37599cb1d6386579c9b516ab12faf841"
+    },
+    {
+      "path": "kernel/userland/src/observe.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "d234d02748857e410df5fa7ad17ccf025608ce75e6018de636df66244da77c38"
+    },
+    {
+      "path": "kernel/userland/src/record_test.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "da9b8cbd78cdff30b41dd381fc3c2ee2f91b235bfb0bc4a5b0faff80f3885daa"
+    },
+    {
+      "path": "kernel/userland/src/record_test.entitlements",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "91d50c5de1167689b0476e57c5f118a186e2160019507d1598bbc7c29e625ba2"
+    },
+    {
+      "path": "kernel/userland/src/rwtouch.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "8c27c93dc5935d35eeb29a4fe2e026463bc9e01e85171466b72498158e2ed00b"
+    },
+    {
+      "path": "kernel/userland/src/shm_test.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "9824a08a225116845bace5f03674792f7ed5a7ef9813ca0740890e76b56080e4"
+    },
+    {
+      "path": "kernel/userland/src/snap_test.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "acd320b44e686b400bdeaf8f96b7a36c78cece1c18945c19a4bba28cd11ec9f9"
+    },
+    {
+      "path": "kernel/userland/src/sound_test.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "efb8a243f601ed70471cffb2e2d42b83c1f47c55ade7476ae58790c91a79183e"
+    },
+    {
+      "path": "kernel/userland/src/stage0.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "18d12e7ea4fd51ccdd21a2b8e30fca4d893bfec1ffe7da28836a96843730ae2c"
+    },
+    {
+      "path": "kernel/userland/src/surf_test.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "d23a22a4a19783d6dd8126a73aa5714361066b7ab78c7e9203f2fcbd65f5cad6"
+    },
+    {
+      "path": "kernel/userland/src/svc_test.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "0717d7ba928d582a4d41515699250319cf1c831eb6179551d3e414a9e8cd151e"
+    },
+    {
+      "path": "kernel/userland/src/torch_test.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "8f47fa45638dbafd0b94d6db7d29471de305b11983c6e3c5ce83b81bb218d6cb"
+    },
+    {
+      "path": "kernel/userland/src/tweaks/redbare.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "c5a590547e1b1e51b46850e2a37c5a9cf5bac8dee05e9b3ca12858fde91f6a31"
+    },
+    {
+      "path": "kernel/userland/src/tweaks/redtest.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "ffe29f6059971c646102e5ca61961bb5c23b52d4bc328c36fb7c3c792a14d7cc"
+    },
+    {
+      "path": "kernel/userland/src/u2f_test.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "9d2eb8c1949ce38fa94d2692c780bc6fbd76ff5aa196478c94125cc10cc277ef"
+    },
+    {
+      "path": "kernel/userland/src/var_store.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "dd73b1fd62b934f689437fc9f04acc87ccfd68a586f5ac37e4683ae12488405b"
+    },
+    {
+      "path": "kernel/userland/src/varcheck.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "06573282757aa13975813a81a2501ab629d4c91fb0dd475a48ddb11f5b80d8a0"
+    },
+    {
+      "path": "kernel/userland/src/vk_test.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "d6f6d4e4c520189c17a8ebf83197a0125d32d6d9ad60d507252709951612635a"
+    },
+    {
+      "path": "kernel/userland/src/vol_ls.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "f3537457da005106001243a6f88ec967699647c7d3a52c1f8733e166df5a3a92"
+    },
+    {
+      "path": "kernel/userland/src/wifipw_test.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "3b5c47e481c95aa1f6db546aa8db5b6d0cddb548747b153584d917775f2f2ad5"
+    },
+    {
+      "path": "kernel/userland/src/wifipw_test.entitlements",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "0b12dae461acf8533de94f78c11b7c7aca8c89451b8f206c08d04065416f49ce"
+    },
+    {
+      "path": "kernel/userland/var/mobile/Library/Preferences/com.apple.VideoProcessing.plist",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "e527ba238af61b6f801da5e244f6001348bf29d26cb1e7a63499d7671cdd5174"
+    },
+    {
+      "path": "kernel/userland/var/mobile/Library/Preferences/com.apple.assistant.support.plist",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "f98c5e8065481d5e9e712f63b2ae472a8b7e372f5d253e5df5dca88a27d258e5"
+    },
+    {
+      "path": "kernel/userland/var/mobile/Library/Preferences/com.apple.coremedia.plist",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "73adca20ace948cb1a455712e3c8140ad1ea32d7761deec12c27dbeaa3df1e68"
+    },
+    {
+      "path": "kernel/userland/var/mobile/Library/Preferences/com.apple.frontboard.plist",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "f249ea3f90a017268d2f1646f2044fdf426a5b6254b6d3cc02bff0311b71bcae"
+    },
+    {
+      "path": "kernel/userland/var/mobile/Library/Preferences/com.apple.keyboard.preferences.plist",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "5eb7f3356091da7521a68557f21ec88994e46391d4695f6f2dc07f11289c9100"
+    },
+    {
+      "path": "kernel/userland/var/mobile/Library/Preferences/com.apple.migration.plist",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "181ef138f6ac61a8c0b8e8bb1afc1344179b2aaade90ed793404efccbee1bc05"
+    },
+    {
+      "path": "kernel/userland/var/mobile/Library/Preferences/com.apple.purplebuddy.plist",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "69b3f1f1491c7c2fb3a167a0678b73855564c69c2219ce9b7d73e76b66335bfa"
+    },
+    {
+      "path": "kernel/userland/var/mobile/Library/Preferences/com.apple.springboard.plist",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "852a943ee26a393700a1fa8e31ad024e14a803105faf62012f9fd47df2740a60"
+    },
+    {
+      "path": "kernel/wifi/lx/include/linux/irq.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "f2d7e643431b0dcd8d883523f8be1f43c9f5ceddc6d0cec61439edd857959850"
+    },
+    {
+      "path": "kernel/wifi/lx/include/linux/of.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "96e3f2a14aa318fb99c93eee36063ff14fac4fc4de735c0d0bc8a7c4f62c5db7"
+    },
+    {
+      "path": "kernel/wifi/lx/include/linux/of_irq.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "68dea4f571a311e6e5b8df65ccfe1fdd8b7c57ab7836beff8570b4ed7e9948df"
+    },
+    {
+      "path": "kernel/wifi/lx/include/linux/of_reserved_mem.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "8d6c5f41cf72fb58f3dfb02d2195a4d3b27c376d13f8acc52382e77f0b1e183b"
+    },
+    {
+      "path": "kernel/wifi/lx/include/linux/remoteproc.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "87aa76736fccf7bbc516d0710d60fbaa6e9b8b62a8f51a54ed7852bc2441d072"
+    },
+    {
+      "path": "kernel/wifi/lx/include/linux/rhashtable.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "f226d85d23ece1677198d513378e1cd700463032b7edbb763811ff144faf0cd3"
+    },
+    {
+      "path": "kernel/wifi/lx/include/linux/soc/qcom/qmi.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "bcbb204ccc072c29e0e8b0d348d8aedeeaa68fd735e1462942910ed9ee4ce018"
+    },
+    {
+      "path": "kernel/wifi/lx/include/lx_more.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "8c9db230677a951bf918f21b5985d0784928cc88d939ee7610dd330a998d9db7"
+    },
+    {
+      "path": "kernel/wifi/lx/include/lx_os.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "4cf38fc50cc3f176bf18b07028053291c62f50d460bc2e4c326beeb9f6b59f64"
+    },
+    {
+      "path": "kernel/wifi/lx/include/lx_prelude.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "a9b5511376c854b8ac3819c83d890d599bbf13eba2bd90f8942fb47fc3780758"
+    },
+    {
+      "path": "kernel/wifi/lx/include/machine/pcpu.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "25de37360b4cee9d34d75c700c5a5785507a35f7c903a26de44bd622a52cf9be"
+    },
+    {
+      "path": "kernel/wifi/lx/include/stdbool.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "2c9b59e4f9191871e4e6dbcd24bfadb515d578ad454526b7aea25e4ad9347b76"
+    },
+    {
+      "path": "kernel/wifi/lx/include/stddef.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "1bc4d75250e298d3b8af8b00ee69395920a0d372349f637edb1a7fe6f537f85c"
+    },
+    {
+      "path": "kernel/wifi/lx/include/stdint.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "ca29b3f02141577f4b91ff392f4d5c3085a7386be0e8d6eb80c172923e08050c"
+    },
+    {
+      "path": "kernel/wifi/lx/include/sys/cdefs.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "7d030974d1a746e48a9161d52a8e1613bce29bbf430131e7f3f2fe6928b89bf7"
+    },
+    {
+      "path": "kernel/wifi/lx/include/sys/linker_set.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "890ea048f619d46e9a0664c55b19c6199cf48bcf974d59a007406e4d24f1804c"
+    },
+    {
+      "path": "kernel/wifi/lx/patches/include-linux-device.h.patch",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "c70ca00174fa8db13c0ceb1d3196b6f847d7aea0cfb03962a87f33bd29c5f773"
+    },
+    {
+      "path": "kernel/wifi/lx/patches/include-linux-etherdevice.h.patch",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "c65ca3a72cbf50036b798588cc151092dcf16a7b110cef3f54ead6711cea7619"
+    },
+    {
+      "path": "kernel/wifi/lx/patches/include-linux-io.h.patch",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "85d1347badaa8f03e6868a7701ccdb88dd647ad0e72fa343230dc1404a87b026"
+    },
+    {
+      "path": "kernel/wifi/lx/patches/include-linux-socket.h.patch",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "7a1d6450ff806bdef12dfb17c2ac1e997c0f7c682ced23fb41d014020b7e2640"
+    },
+    {
+      "path": "kernel/wifi/lx/patches/include-net-cfg80211.h.patch",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "ceafbe2d3579b0ce1e63f037eb4736b68238cff9bbb3b68b1551fd3587856c0a"
+    },
+    {
+      "path": "kernel/wifi/lx/patches/include-net-mac80211.h.patch",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "49a65b1ab58f334194c305c1ba49154b02613ba7c06880944ad62673a500b7fe"
+    },
+    {
+      "path": "kernel/wifi/lx/src/lx.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "cea64faa27849193278c7861bf272d0972b254a4e603426342dada2f321f6940"
+    },
+    {
+      "path": "kernel/wifi/lx/src/lx_80211.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "6de510ff3ab31b813e5c818f2887bd1975de334c12cc9dcbd6073bb6bf88e6db"
+    },
+    {
+      "path": "kernel/wifi/lx/src/lx_base.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "03364b5c009f5273a33939df45dd743fb4d6db941d603d1769b5341f57c7527a"
+    },
+    {
+      "path": "kernel/wifi/lx/src/lx_bus.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "70d669f29196f84a46a6a84b33d309e0ce07ba2bc16bade54c45be38e5f7e2c6"
+    },
+    {
+      "path": "kernel/wifi/lx/src/lx_wpa.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "758a3eada9c665db2dafaef535a30ef0ba2911c786e4e9f1d3886b096f7f281e"
+    },
+    {
+      "path": "kernel/wifi/lx/src/lx_wpa.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "719feef82ee63a10066cdecd4a7d62ed62d03e4811ae35cc1ecfc956bb0f9f12"
+    },
+    {
+      "path": "kernel/xl",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "4f384cc8ab9b6494ffc30e7b9e6a255f97de8e7543fd6568e7a888147e426c2d"
+    },
+    {
+      "path": "kernel/xnu-build.sh",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "b5c1857b8a3c5a9ed81aa2cda145645947a62edc2020d512ed7325a47d7be9f6"
+    },
+    {
+      "path": "kernel/xnu-deps/build/lzbitmap/libzbitmap.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "db3dbcac84d689b740f0cdb2e5d274dee9e51c22823cd49067ee362235df8af4"
+    },
+    {
+      "path": "kernel/xnu-deps/build/lzbitmap/libzbitmap.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "2181dc070a09df6b2eff6eccb143798725d2fb2b28875cf758ad5f77265dbd18"
+    },
+    {
+      "path": "kernel/xnu-deps/build/lzbitmap/unzbm.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "e283200251b2575ec13c453129373e926bb9eafe123224aa6dff01bbb5182f7a"
+    },
+    {
+      "path": "kernel/xnu-deps/build/pthread/build.sh",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "9a9c1997dd6f74e07deaca0722d514d4b5f296cf09cd385af91f2132a95c2333"
+    },
+    {
+      "path": "kernel/xnu-deps/build/pthread/inc/TargetConditionals.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "56013e3ba03c2155f3fef8027b60857150c30c890bacea753e0c1d534a1192c6"
+    },
+    {
+      "path": "kernel/xnu-deps/gen-iig-stubs.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "113f6e12e2223a2416bc3536f517edb0b177345757a18b70a32f1d355cba656e"
+    },
+    {
+      "path": "kernel/xnu-deps/host/bin/codesign",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "306c6ca7407560340797866e077e053627ad409277d1b9da58106fce4cf717cb"
+    },
+    {
+      "path": "kernel/xnu-deps/host/bin/iig",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "eba76514150af1a2865d5da3a35c8eeb3bae088ba9758f770c1de029fb74c1d6"
+    },
+    {
+      "path": "kernel/xnu-deps/host/bin/install",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "779155ae5182e0d18071aecc92976da75ecc9eccdb3ceadadbf68b1cab50fb53"
+    },
+    {
+      "path": "kernel/xnu-deps/host/bin/plutil",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "e1998389f0fd980d374b539d88c01a8cc7305b4c356da85c7c6fd0b1526d22a8"
+    },
+    {
+      "path": "kernel/xnu-deps/host/bin/sw_vers",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "aef56b0dffa13a5763af4746d0e77bba233df3c33d551bfe3a79c0b5a3a156d4"
+    },
+    {
+      "path": "kernel/xnu-deps/host/bin/xcrun",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "8f17f6d1141f617bca3846bb9ff1d2bba381ffa780dd0b31b465414d642faf50"
+    },
+    {
+      "path": "kernel/xnu-deps/host/bin/xnu-clang",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "17949bbd912ac1282799b11f89103cab88666adb3d0bd5ff16cab93e71002939"
+    },
+    {
+      "path": "kernel/xnu-deps/hostinc/architecture/byte_order.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "c5431e6a139cbc25c6ab34109e0bb95d39657ab608a909cc6b189fb9e5830586"
+    },
+    {
+      "path": "kernel/xnu-deps/hostinc/copyfile.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "8faa900ce207f3b0f24a9b2051877650da7701e2bb3de18ea6cd53c105dc4c6c"
+    },
+    {
+      "path": "kernel/xnu-deps/hostinc/hostcompat.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "5974afe6c1f6cd3650b3b20e2f9125d5396ec087b8e1b0cba220ff3fd73e03db"
+    },
+    {
+      "path": "kernel/xnu-deps/hostinc/libc.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "072bc233cad31ca2408514acc76c863aa2c8a3a70fc2c495ff7664e94749434f"
+    },
+    {
+      "path": "kernel/xnu-deps/hostinc/mach-o/arch.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "9481e54c711549c394b67baca9aaa4b85ed3bdb1c37da8be3eda7f762b000932"
+    },
+    {
+      "path": "kernel/xnu-deps/hostinc/mach-o/swap.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "be470c975e6f5f4999707bab9be7a736c31379177fd8a3f4b2d6dac2e3949874"
+    },
+    {
+      "path": "kernel/xnu-deps/hostinc/mach/mach_init.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "ac1665a3bc7e087df3b4474f63165c14d3b79bf774968300e387a68f595d9714"
+    },
+    {
+      "path": "kernel/xnu-deps/hostinc/mach/machine.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "2ff25c8791d7f34446406bc7e8de92e3141c63150a53e555ed179a1473ce890f"
+    },
+    {
+      "path": "kernel/xnu-deps/hostinc/mach/machine/thread_status.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "kernel/xnu-deps/hostinc/mach/vm_prot.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "f098930d8569512ffa93f21883a250c7555dac345d2cca15ef05f90d0764b980"
+    },
+    {
+      "path": "kernel/xnu-deps/hostinc/xnu_clang_compat.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "448d2ebc226c1caa76cd94866f9ec4d331aaa0041bc43636e6ded8dd3393d176"
+    },
+    {
+      "path": "kernel/xnu-deps/iig-impl/OSObject.iig.cpp",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "bdf53bf258e6b9e45bfac904ec3610c334befaa41b5d04bd2d897bf598c3f5f8"
+    },
+    {
+      "path": "kernel/xnu-deps/iig-impl/undefined-all.txt",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "bf9514c2d5200a9552a1174e8a2963b039bfa13b356ae6653c5787edda8dc426"
+    },
+    {
+      "path": "kernel/xnu-deps/setup.sh",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "b3d477d744c7dbecc54ddee9389f80cd9f309f380834dc8ad2b256101eaeb262"
+    },
+    {
+      "path": "kernel/xnu-env.sh",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "705b137e0095e7889c3f08e87d96e103ce095baa34b907c9d876a3232805d415"
+    },
+    {
+      "path": "kernel/xnu/README.md",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "f00c803c872a160bd878e6bfa1b514ddd452b8af02dec05b220a1bea50a44126"
+    },
+    {
+      "path": "kernel/xnu/apply.sh",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "2e4d331f05f38186b5f04ba3eb2e16020c02081d0d18f312d610fe2706901cda"
+    },
+    {
+      "path": "kernel/xnu/export.sh",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "8bd3fbc3b79955c0dd71c6f35de6081971b54b530caef9e50e4db233c4193aa7"
+    },
+    {
+      "path": "kernel/xnu/files/bsd/hfs/hfs_builtin.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "f13af79ab1e79b1a10a844c6e7b261423d6cdd588d8966393931271ac9f1a1d9"
+    },
+    {
+      "path": "kernel/xnu/files/bsd/kern/kern_minimac.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "bbd9176d658d20961b1515dd65e554946de28a8537131df79d7029927da83999"
+    },
+    {
+      "path": "kernel/xnu/files/bsd/miscfs/apfs/apfs.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "4d1f575350df17244c854c7338793c7a61e8623a25f164f49ebe636a73632f02"
+    },
+    {
+      "path": "kernel/xnu/files/bsd/miscfs/apfs/apfs_deflate.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "c3f11fc28c1247aa1b3d74b0666d3497ddc59dbf277e969e45624f3c3a6e860d"
+    },
+    {
+      "path": "kernel/xnu/files/bsd/miscfs/apfs/apfs_format.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "0ac5524aad4f2eb0c33d8ae8b8d608e88dd4ce5d1f1a37c3c0e4db4f2b141b0a"
+    },
+    {
+      "path": "kernel/xnu/files/bsd/miscfs/apfs/apfs_lib.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "d6b7f2855a030a9fc07385848a2d17c4b3fc63b5d14998f9e9724c294dcfac11"
+    },
+    {
+      "path": "kernel/xnu/files/bsd/miscfs/apfs/apfs_lib.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "92bf9a7010f1559c808e07c96eae6a282f2858fd1d47c588b106ecf094a5348f"
+    },
+    {
+      "path": "kernel/xnu/files/bsd/miscfs/apfs/apfs_store.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "7cae718e6254ca5156df29ea8e297bc4a98e47e227ec68b7b27d37843137805b"
+    },
+    {
+      "path": "kernel/xnu/files/bsd/miscfs/apfs/apfs_store.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "1deb82b95d6c0ef594c027878ba1a8974506a9ef8101c8dee200c8af238e80fc"
+    },
+    {
+      "path": "kernel/xnu/files/bsd/miscfs/apfs/apfs_vfsops.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "dbc3597901cce82f9257f553824b419b466f8497f69e1b18e8c1f0204775dbb9"
+    },
+    {
+      "path": "kernel/xnu/files/bsd/miscfs/apfs/apfs_vnops.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "f3dcd203e6aa63b4d5f760f18a477ea22a6f9489e99db022a5a26ef15418a8ef"
+    },
+    {
+      "path": "kernel/xnu/files/bsd/miscfs/apfs/apfs_write.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "71ab8382668b4172dd16e8cf4acaab5e58558c33c6dc142871824c7cc97a5260"
+    },
+    {
+      "path": "kernel/xnu/files/bsd/miscfs/apfs/apfs_write.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "f05ceef111a380b17e8ee23033aacfe8d3d6f9d1857fa91e3b035b7bd9696d70"
+    },
+    {
+      "path": "kernel/xnu/files/bsd/miscfs/apfs/apfs_zbitmap.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "a35fb93f094d4fcc1c5966aff1e7d5c9e87250480835660098e03762736679c8"
+    },
+    {
+      "path": "kernel/xnu/files/bsd/miscfs/apfs/libdeflate/COPYING",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "4ad69099cb4374836fd27583d9991e2838cd86b6e4666ab26b2d32582c91e73a"
+    },
+    {
+      "path": "kernel/xnu/files/bsd/miscfs/apfs/libdeflate/common_defs.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "0702970eb23da9bca3be9f31fe71824b2f88c4fbac55c59cee8d42cdaec63b63"
+    },
+    {
+      "path": "kernel/xnu/files/bsd/miscfs/apfs/libdeflate/lib/adler32.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "63099826db3ddf84c15bfba30940f9689917185df8c30ff27a2bc2b7cb6a19f2"
+    },
+    {
+      "path": "kernel/xnu/files/bsd/miscfs/apfs/libdeflate/lib/arm/adler32_impl.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "b7e43d7b91db98d774243cf29ee41941edf93e71b5a3f5cc3ede34d8b70a93d9"
+    },
+    {
+      "path": "kernel/xnu/files/bsd/miscfs/apfs/libdeflate/lib/arm/cpu_features.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "0cff5c0110021dc8b18511e328f913f1bad21f31ad927497d1f428db4e6ed239"
+    },
+    {
+      "path": "kernel/xnu/files/bsd/miscfs/apfs/libdeflate/lib/arm/crc32_impl.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "5a24f5087e665b30516f83c2e09a58ed01dab867895a6cefc2f1c833d12482d3"
+    },
+    {
+      "path": "kernel/xnu/files/bsd/miscfs/apfs/libdeflate/lib/arm/crc32_pmull_helpers.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "e469001ad29607cab992ae29c9eaac331427d6b103d11d58d37158b3aa0be95c"
+    },
+    {
+      "path": "kernel/xnu/files/bsd/miscfs/apfs/libdeflate/lib/arm/crc32_pmull_wide.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "c53a58d1e3dc5e75d23c1338fed6cc431ee6fbdfcd4ac94f576579258ac34a88"
+    },
+    {
+      "path": "kernel/xnu/files/bsd/miscfs/apfs/libdeflate/lib/arm/matchfinder_impl.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "11cd6a9c47d2dadf746f7a944c72c672b40bc83b2ffb43356e0b7ced6b6b8038"
+    },
+    {
+      "path": "kernel/xnu/files/bsd/miscfs/apfs/libdeflate/lib/cpu_features_common.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "f4eb0800558e9116dd14446ccfb9b1896f970aec6de42c18366a29bde73fd0da"
+    },
+    {
+      "path": "kernel/xnu/files/bsd/miscfs/apfs/libdeflate/lib/decompress_template.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "ade3034c1d5c840cb31bd9738a015be804862a8dfce03c14ac2f5b3a826792b8"
+    },
+    {
+      "path": "kernel/xnu/files/bsd/miscfs/apfs/libdeflate/lib/deflate_constants.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "72ea6e5f0abe53e781203e3f383603a765a768b860a09b3356be36bfd87c8af3"
+    },
+    {
+      "path": "kernel/xnu/files/bsd/miscfs/apfs/libdeflate/lib/deflate_decompress.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "bc16ab65325ce4ac14af830b2cf6c805770beab01fd2f09226dca3dfa3f8bb47"
+    },
+    {
+      "path": "kernel/xnu/files/bsd/miscfs/apfs/libdeflate/lib/lib_common.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "e7aa1f2750434e1019ffabda577dab0fdf5b95f010f6f20aa7e21323b3bcceea"
+    },
+    {
+      "path": "kernel/xnu/files/bsd/miscfs/apfs/libdeflate/lib/zlib_constants.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "562e16b83ac33ac6d351cdfdf1962750576080d65c22ab66cad0aaa33695bebb"
+    },
+    {
+      "path": "kernel/xnu/files/bsd/miscfs/apfs/libdeflate/lib/zlib_decompress.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "704a57fb91c36c1c88b04a3482694de08c794ca0cb3904ac247a206802aa6ee0"
+    },
+    {
+      "path": "kernel/xnu/files/bsd/miscfs/apfs/libdeflate/libdeflate.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "957cda6906c2be6c8978cf19779f1aad9dd121af1147a10e184b137db353678d"
+    },
+    {
+      "path": "kernel/xnu/files/bsd/miscfs/apfs/libzbitmap/libzbitmap.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "37dc640d3c8b076e3ad2c4a889702fc3a918a3c17f72c575ea5f6ed36815c38b"
+    },
+    {
+      "path": "kernel/xnu/files/bsd/miscfs/apfs/libzbitmap/libzbitmap.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "0237307fb7376198a01ae74b21c5e656170b0992bf0c55c0eafb69a1f285ebda"
+    },
+    {
+      "path": "kernel/xnu/files/bsd/miscfs/ramfs/ramfs.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "14884af48b8d8de3d569df6cff59fafb9c6328d9a606bed27e24a69d4d2d98c4"
+    },
+    {
+      "path": "kernel/xnu/files/bsd/pthread/pthread_kext_static.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "7afc0924a0c07c9668eabfe8cf17b170264041a7af0b9e848f215b9891312b1b"
+    },
+    {
+      "path": "kernel/xnu/files/bsd/sys/hakios.apfs_check.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "076225c1137cfa12c4cd3ccd86a6a2bd789bb30c1b2e7119c71d17cd6326aaed"
+    },
+    {
+      "path": "kernel/xnu/files/bsd/sys/hakios.audio.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "6a195fe19f0dfa30d1cab266b2c8f10f95a6395be67358af3961baa60fc2f22b"
+    },
+    {
+      "path": "kernel/xnu/files/bsd/sys/hakios.camera.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "d229dcbf0b0d18bb83d45de51e0becef41b9184db9d43824627eb7c497a74766"
+    },
+    {
+      "path": "kernel/xnu/files/bsd/sys/hakios.dwmmc.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "efe5d4f34ae09a7d4d542d84d60021283f52e6be0b747c65d85648e42bc9f801"
+    },
+    {
+      "path": "kernel/xnu/files/bsd/sys/hakios.input.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "75eca529c934024737e6349729eb5d13545de188f932b508de60a310373e914f"
+    },
+    {
+      "path": "kernel/xnu/files/bsd/sys/hakios.ipa.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "8a5d990b4a31ec3e24a1eef6c0561232994a7cfd4ec5cf3eabba985ee4bf1661"
+    },
+    {
+      "path": "kernel/xnu/files/bsd/sys/hakios.lx.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "f323a4adfb7a459ad1f3d83cdbdda5110df051ad9293d2c2a63c4220db961f99"
+    },
+    {
+      "path": "kernel/xnu/files/bsd/sys/hakios.nas.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "8f4f7caf9d6716c36790616606b8288b8b32038eaa2453e3b40b1b02e6783194"
+    },
+    {
+      "path": "kernel/xnu/files/bsd/sys/hakios.net.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "05d377ba6b71cc485676fe3632f49bfa30d2cbc1a6476ec723abb0f8ed12fff4"
+    },
+    {
+      "path": "kernel/xnu/files/bsd/sys/hakios.qmi.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "a9c358f7a797a534c84c77b7f05f43f507345160e72ad366ff739213214f0648"
+    },
+    {
+      "path": "kernel/xnu/files/bsd/sys/hakios.qrtr.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "d9658ba4ddbc941cf201edfadbfdb38248c4939641d394eb7fecb50be1180e66"
+    },
+    {
+      "path": "kernel/xnu/files/bsd/sys/hakios.sparse.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "a8bbaceadde8f86d4890d8df4a415196e77872ef3d6efe3c78d50ee8d7c868ff"
+    },
+    {
+      "path": "kernel/xnu/files/bsd/sys/hakios.sta.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "d98aa48457d2b1b63779b37a39878539a13f22a924161e6526e3568f0759798f"
+    },
+    {
+      "path": "kernel/xnu/files/bsd/sys/hakios.version.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "e28c2a3aac77b2d205ffd3099d4952be6832b4ae4f878d2149211ab491077da1"
+    },
+    {
+      "path": "kernel/xnu/files/bsd/sys/hakios.virtio_blk.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "d706c178431404330ae329238663d63230971d8106d1ee9656bcecef93b9fa38"
+    },
+    {
+      "path": "kernel/xnu/files/iokit/Kernel/GenericARMPE.cpp",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "0765fc6432dbbecb39c8c8bcd5e2f9e8e1b0a54e1998619396398cace02894e8"
+    },
+    {
+      "path": "kernel/xnu/files/iokit/Kernel/MiniAppleKeyStore.cpp",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "e8e9efcd8db6027d88eefdb88b9fb9270a71798429c6008695568f9d23722bc5"
+    },
+    {
+      "path": "kernel/xnu/files/iokit/Kernel/MiniDrivers.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "f5b7446b61c1b53f79fef563541747f4f0e2b6d2fb9009684ad72a95c7c6553b"
+    },
+    {
+      "path": "kernel/xnu/files/iokit/Kernel/MiniIOMobileFramebuffer.cpp",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "edd40f84ddbdc390f9e6721ff931902dd723ed4463584bbec8847dafc94a4c08"
+    },
+    {
+      "path": "kernel/xnu/files/iokit/Kernel/MiniIONetworkStack.cpp",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "3b7cdf77ac3e2a472c55f7dd622d04979782e46d8bd3589c535a5d97a252ef12"
+    },
+    {
+      "path": "kernel/xnu/files/iokit/Kernel/MiniIOSurface.cpp",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "8e5c2d391cec40835aca8d6c4803c9602c4080460355368177b9943eec838058"
+    },
+    {
+      "path": "kernel/xnu/files/iokit/Kernel/MiniIOSurface.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "482dcd3f1823e779555a18f3209eb4daa14b90eead85a5d324bfcf6104f7abaa"
+    },
+    {
+      "path": "kernel/xnu/files/libkern/amfi/miniamfi.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "071c9795555e436454605cc8e2d9c85cab882325fd8352adeb3132479538fee1"
+    },
+    {
+      "path": "kernel/xnu/files/libkern/amfi/miniamfi_entitlements.cpp",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "342e276410dbc80cbe735681279b8280d1f19375db59a47ac1a8ec1240b60d6d"
+    },
+    {
+      "path": "kernel/xnu/files/osfmk/arm64/generic_arm64_support.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "4936afa2d728d6bd968c6fb401b6027fa162209cb1e7cc61a845787774a7e72d"
+    },
+    {
+      "path": "kernel/xnu/files/osfmk/arm64/gic_v2_irq.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "9ef9ae637b6952b4ccd335445afd9d4cec04ba228c25bcb768fce3a8478728d0"
+    },
+    {
+      "path": "kernel/xnu/files/osfmk/arm64/gic_v3_irq.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "5c70f57bcb0eb0b5164e4498bb76dbbae408606b76d6990526eac53bd18c09f2"
+    },
+    {
+      "path": "kernel/xnu/files/osfmk/arm64/kpc.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "31cd51ee78b5cc06eb5787ee18bf22b75a9592c1dbff758c461ab445521f1365"
+    },
+    {
+      "path": "kernel/xnu/files/osfmk/arm64/loader_return.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "d5fcd5768f7f9149c21f787d482c1b695c23988d251fe9b6d0df158f17417c36"
+    },
+    {
+      "path": "kernel/xnu/files/osfmk/arm64/ppl/sart.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "0630ec54c77fee801bd6ee16fcccbe3ad42ac6f3cfbb64a95ef57f5bbead8250"
+    },
+    {
+      "path": "kernel/xnu/files/osfmk/arm64/ppl/uat.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "ef93267d8b4c6582a708d08722f202a0b9e16cef0ea35f777ef0f8c443a4aca2"
+    },
+    {
+      "path": "kernel/xnu/files/osfmk/arm64/psci_smp.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "091c4eb64c35ac7cbd4edc7ae8756b8fcbe895e326c2fe1e4485566d7b0286fd"
+    },
+    {
+      "path": "kernel/xnu/files/osfmk/arm64/psci_smp.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "861b78c09bacf88c733d2c989d2f20c9b31854e050e06883822e0aba833f5ba4"
+    },
+    {
+      "path": "kernel/xnu/files/osfmk/arm64/psci_trampoline.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "a107e638f2ef47c8969d4a39837ea151ff70b9387f70e89a5c7f12a51789871c"
+    },
+    {
+      "path": "kernel/xnu/files/osfmk/arm64/tunables/tunables.s",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "acc19ceded1615350c7a8d1c100598115592ff09b164a3363a58a2a8cf9c0018"
+    },
+    {
+      "path": "kernel/xnu/files/osfmk/arm64/user_exception_trace.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "b4fa90eb28d8752ae68b4dc4532aea3ed43611f7f5874aee4ab17ec035c80916"
+    },
+    {
+      "path": "kernel/xnu/files/osfmk/minicrypto/mc_aes.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "f4fa92ccd8291ba1e729d88058841ecf76e18e09cfac803955ae534946c266cb"
+    },
+    {
+      "path": "kernel/xnu/files/osfmk/minicrypto/mc_digests.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "64b30e9c4378eb8ebc910647fdf2c22854d51266f1c7ae4dc75da0fd3f2f6219"
+    },
+    {
+      "path": "kernel/xnu/files/osfmk/minicrypto/mc_provider.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "9c612ea54894f6f127b3fbf2c8ece5205c32efd6b9fffd606062f8f392348a30"
+    },
+    {
+      "path": "kernel/xnu/files/osfmk/minicrypto/minicrypto.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "09e487f3aaa9d1fe91039a62ac980f9b79c16ce6c1688b16051b76bab7787dd6"
+    },
+    {
+      "path": "kernel/xnu/hakios.patch",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "c1051cc64db844fd4e59c8f6d98319774d98c684fb9f5ab9f9219b3e475be415"
+    },
+    {
+      "path": "kernel/xnu/hfs/core.list",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "73889a33b7fe4803ee313da2ad9175819368927c172561208c7ed5f1ea314a91"
+    },
+    {
+      "path": "kernel/xnu/hfs/encodings.list",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "92b148f5e366e04d5f87f89d64970ac0311e015423a210a6bb212c6fd8be6c2a"
+    },
+    {
+      "path": "kernel/xnu/hfs/hfs.patch",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "edc0a45b25a4c65d04ec5abc8d03d22fe64af105bda62accfde4020b71b40806"
+    },
+    {
+      "path": "kernel/xnu/hfs/hfs.sh",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "881d7a81f24cdc4665b13640b9e32156ef88667c317a648d21751c5693f00d5c"
+    },
+    {
+      "path": "kernel/xnu/sync-drivers.sh",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "fb1eea0dcbabb71ae07360749e1b17fd75c39697f52048574af8d77e6afdc943"
+    },
+    {
+      "path": "kernel/xnuloader/build.sh",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "7d5cd24a8a153dde804ba8d139ec5c60405f476e3233870c2768e1e0c31296f7"
+    },
+    {
+      "path": "kernel/xnuloader/efi.h",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "30e8e0173fc131876410c724597d1c3ba773c4d609a7cd326ff6061c65c6a105"
+    },
+    {
+      "path": "kernel/xnuloader/im4p.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "70b18b18b21a16a2383674cb10faed3691d0fcc0b3d9aee6856551c632fba250"
+    },
+    {
+      "path": "kernel/xnuloader/loader.c",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "49bcfd4aa43aa0924d0fa7b16baecc13298e2453d5495e944059de8d3713f2f6"
+    },
+    {
+      "path": "kernel/xnuloader/mkidentity.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "ae6cebdcfa22994661211e0bc35fd14770484173f951ceef6a65e9b84ad3ff99"
+    },
+    {
+      "path": "kernel/xnuloader/mkidentity.sh",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "f96cf3f64245cc6e49185e4093c82fd443c06e0607d981076efbbc053fe1d570"
+    },
+    {
+      "path": "kernel/xnuloader/mkpayload.py",
+      "origin": "HakiOS common tree with A21s changes",
+      "sha256": "936d9f0ddb3215b34026f348146e750fb19a11888423e1fd58ded94589510518"
+    },
+    {
+      "path": "device/.gitignore",
+      "origin": "HakiOS A21s device layer",
+      "sha256": "6d4267af90a959e23eb81206821cc9bcf019626404c6894ec04c1d5ad11a1f04"
+    },
+    {
+      "path": "device/AGENTS.md",
+      "origin": "HakiOS A21s device layer",
+      "sha256": "2bd703790fe69fc960d89ee95a97595c4bd85ab8eebab5f0e38c18cf44eaff8b"
+    },
+    {
+      "path": "device/HANDOFF.md",
+      "origin": "HakiOS A21s device layer",
+      "sha256": "3589df4719e10acac36c9320597d21d53c7a2bccca93c051a0a3b34acdf2d84e"
+    },
+    {
+      "path": "device/LICENSE",
+      "origin": "HakiOS A21s device layer",
+      "sha256": "5d31745b8383e163528ac4f87a1af4cbb9f3854ee71d03c69f32919f437db244"
+    },
+    {
+      "path": "device/README.md",
+      "origin": "HakiOS A21s device layer",
+      "sha256": "6b8f1d9cc2719177707d0a280377e48297aa5188b140ed9d5819bc739315a85a"
+    },
+    {
+      "path": "device/device.conf",
+      "origin": "HakiOS A21s device layer",
+      "sha256": "25c984ef95465a4c4bcc2b94580c1761630c793344e54bd00a5f1f0af08f4b6e"
+    },
+    {
+      "path": "device/diag/README.md",
+      "origin": "HakiOS A21s device layer",
+      "sha256": "b7108ff79ecec6949e8271e711da4df4fc16712c6de273fddaef85ca6ddb65b5"
+    },
+    {
+      "path": "device/diag/a21sdiag.c",
+      "origin": "HakiOS A21s device layer",
+      "sha256": "3770fb703bd33fa703e7aaa2c7e58a77969c55b2942c84c51b59ebe7b60a6b03"
+    },
+    {
+      "path": "device/diag/build.sh",
+      "origin": "HakiOS A21s device layer",
+      "sha256": "b0fc7d3cb450ddd094c8890d25845a0fed4446dc1aec85ab8c264c320d0bc1f1"
+    },
+    {
+      "path": "device/diag/exydbg.h",
+      "origin": "HakiOS A21s device layer",
+      "sha256": "e3d25f7acb9b902e8a356e9e8835a0f4ca61a3b717a4dee793ed621359ce917c"
+    },
+    {
+      "path": "device/diag/link.ld",
+      "origin": "HakiOS A21s device layer",
+      "sha256": "6214a38ab869153bf81712708361cf402ec7f85fcb7769f2739c664ce13a0ca0"
+    },
+    {
+      "path": "device/diag/start.S",
+      "origin": "HakiOS A21s device layer",
+      "sha256": "61a32d7f9561bd26b090af8c0c594b746ecc9c18f8990d563021069e3a11c2e8"
+    },
+    {
+      "path": "device/docs/handoff-2026-11-05.md",
+      "origin": "HakiOS A21s device layer",
+      "sha256": "2cf64c9509fc1a6a220c556fec2c2a951654636d1c0a44995d0d95f8e323d33d"
+    },
+    {
+      "path": "device/docs/hardware-a21s.md",
+      "origin": "HakiOS A21s device layer",
+      "sha256": "c8bbafc01f575240ba5afc08317bdfb8c6b348b41cf00133c2ec1c749929aba1"
+    },
+    {
+      "path": "device/docs/storage-2026-11-05.md",
+      "origin": "HakiOS A21s device layer",
+      "sha256": "6de62312a2ba27576c2285507a6b2e63be92e0255b35a2d4cd09c8b68abcb234"
+    },
+    {
+      "path": "device/kernel/README.md",
+      "origin": "HakiOS A21s device layer",
+      "sha256": "53d218347af0bda30cbf2c1f01dadcd58060777983d4502a6f2d00d180ced7a7"
+    },
+    {
+      "path": "device/kernel/bsd/dev/hakios.dwmmc.c",
+      "origin": "HakiOS A21s device layer",
+      "sha256": "c7e7c97c17ba6f820226bd8c0391cbf62ea6f1d3ab9f45ff8f838bf7ce17baa0"
+    },
+    {
+      "path": "device/kernel/bsd/dev/hakios.mali.c",
+      "origin": "HakiOS A21s device layer",
+      "sha256": "043822e514451eab3f7b928dcad3a235f20efcf31849ff650ef278d9a0979804"
+    },
+    {
+      "path": "device/kernel/bsd/sys/hakios.dwmmc.h",
+      "origin": "HakiOS A21s device layer",
+      "sha256": "efe5d4f34ae09a7d4d542d84d60021283f52e6be0b747c65d85648e42bc9f801"
+    },
+    {
+      "path": "device/kernel/hakios-xnu-kernel.patch",
+      "origin": "HakiOS A21s device layer",
+      "sha256": "b785b482a46208606086fcfa1bfee8e3604c760b346128a7c2ae7867d1138690"
+    },
+    {
+      "path": "device/kernel/iokit/Kernel/hakios.mali.cpp",
+      "origin": "HakiOS A21s device layer",
+      "sha256": "5f9a669447681b14e3ee0adf5447022f36d1c957420f2d45e072277ec76cd010"
+    },
+    {
+      "path": "device/kernel/osfmk/arm64/gic_v2_irq.h",
+      "origin": "HakiOS A21s device layer",
+      "sha256": "e6e36d8b756c6a6438253382b1da3f211ff7cc30c2f700fc0edd54923561f807"
+    },
+    {
+      "path": "device/loader/README.md",
+      "origin": "HakiOS A21s device layer",
+      "sha256": "5ca9d751daa70a8e76aa2c406a4cb3a926fa8ec6b8be393e21ca0403deec2883"
+    },
+    {
+      "path": "device/loader/build.sh",
+      "origin": "HakiOS A21s device layer",
+      "sha256": "e9021bab00750cffdd3d9734581a60c7c010f1670b50dbebc286b8ae58523872"
+    },
+    {
+      "path": "device/loader/cpu_fdt.h",
+      "origin": "HakiOS A21s device layer",
+      "sha256": "4fe60f9c7ee11dea0594fce913a903fcaa32001a4ed5984b148265265840dfad"
+    },
+    {
+      "path": "device/loader/dwmmc.h",
+      "origin": "HakiOS A21s device layer",
+      "sha256": "8ccfeee41678806eda666813cf1c5a0df01a0f3f7e966651ce9b6519fb674c2f"
+    },
+    {
+      "path": "device/loader/exyloader.c",
+      "origin": "HakiOS A21s device layer",
+      "sha256": "813384948119be1fb46872897920d98c74b96c20cd73dfa3b322219928c50933"
+    },
+    {
+      "path": "device/loader/logselect.h",
+      "origin": "HakiOS A21s device layer",
+      "sha256": "42fc3fecdc34beed8051e6b54c6d00fb8680ec2b479cc7f1caa0d87d6282d1ca"
+    },
+    {
+      "path": "device/loader/smp_exynos.h",
+      "origin": "HakiOS A21s device layer",
+      "sha256": "ab00e266012f194b8314f6f9fb6e334f200cbe953380782e82b08a6f9b480522"
+    },
+    {
+      "path": "device/loader/smp_probe.S",
+      "origin": "HakiOS A21s device layer",
+      "sha256": "b4fc3773d0e9ba7315920bfc30a9c22774d3b06cb5c4a3e27c721d32b99bd3c1"
+    },
+    {
+      "path": "device/loader/smp_probe.h",
+      "origin": "HakiOS A21s device layer",
+      "sha256": "52745f41cdee604db18b013317dcc40e9284ade4f16ec0c1e7568de88dbac404"
+    },
+    {
+      "path": "device/loader/start.S",
+      "origin": "HakiOS A21s device layer",
+      "sha256": "c819df86e96bc6e77f446163759989a4f1d68dc1d67d543f802b223b1900272c"
+    },
+    {
+      "path": "device/loader/xnu.h",
+      "origin": "HakiOS A21s device layer",
+      "sha256": "4359cef3488946c35110981e5e1a7944777a1a2b86a1eb2f7c5f74f232916950"
+    },
+    {
+      "path": "device/tests/test_cpu_fdt.py",
+      "origin": "HakiOS A21s device layer",
+      "sha256": "3991381aef8684d2170aea2c5d787f8bd8a500752e0c308fff51c6a41dde4282"
+    },
+    {
+      "path": "device/tests/test_emmc_log.py",
+      "origin": "HakiOS A21s device layer",
+      "sha256": "1e80058c18f85f1c25b1c3bc1f9080ea035ffedac58cda303c417273e74eb62f"
+    },
+    {
+      "path": "device/tests/test_logselect.py",
+      "origin": "HakiOS A21s device layer",
+      "sha256": "38462d1dca1d6aa7a244d03201dab492c7051301e6de69518e3bbf1821a7890b"
+    },
+    {
+      "path": "device/tests/test_smp_policy.py",
+      "origin": "HakiOS A21s device layer",
+      "sha256": "129ad1894ac641a2ed8a9f6108a407d2355512d31316c331849170507bcdb142"
+    },
+    {
+      "path": "device/tests/test_smp_probe.py",
+      "origin": "HakiOS A21s device layer",
+      "sha256": "d46f354819b239ad31fb96950021005dbd3fd5ca4de4144c07cbf69ad286ae55"
+    },
+    {
+      "path": "device/tests/test_xnusys_var.py",
+      "origin": "HakiOS A21s device layer",
+      "sha256": "1b3bad03081ddcec22f62b276331eaf129a47eb0034bed0b79b480a2cc57c6aa"
+    },
+    {
+      "path": "device/tools/chainboot.py",
+      "origin": "HakiOS A21s device layer",
+      "sha256": "5c180e6bde54fe131bd24ed6e6b7dfd4c61806b1045de6624369d21ba54e2151"
+    },
+    {
+      "path": "device/tools/emmc_log.py",
+      "origin": "HakiOS A21s device layer",
+      "sha256": "deb183236e88f283df0c0aab40fbfdc2f9dec7b5a8cd4ac2a276139fefbd2300"
+    },
+    {
+      "path": "device/tools/mkfont8x16.swift",
+      "origin": "HakiOS A21s device layer",
+      "sha256": "f8b5fac3e76db6b21a9cbfd3205abc02aadeb66c950ad6fd8420fea99419d447"
+    },
+    {
+      "path": "device/tools/mkidentity.py",
+      "origin": "HakiOS A21s device layer",
+      "sha256": "223437dc2aa4d9c30d9d4fff3b077533ef3c0fdf4afb0f5919edf281f1ef01a9"
+    },
+    {
+      "path": "device/tools/probe-a21s-dt.sh",
+      "origin": "HakiOS A21s device layer",
+      "sha256": "5f94715a0c317890c3e81d8f8df613787cbf11e4846d006875f22d88b1b1d50e"
+    },
+    {
+      "path": "device/tools/probe-a21s.sh",
+      "origin": "HakiOS A21s device layer",
+      "sha256": "d2dfa64f812071fca265c40f3a7ba6fbfe33f652fcd3bad5a874f4f3130c3229"
+    },
+    {
+      "path": "device/tools/xnusys.py",
+      "origin": "HakiOS A21s device layer",
+      "sha256": "20504c73274e70078ac315e842e0aa22b1410b6f6f1d89e99a3af4bbc53b9588"
+    },
+    {
+      "path": "graphics/a32-reference/tools/mesa/panfrost-darwin.patch",
+      "origin": "HakiOS A32 reference, original notices retained",
+      "sha256": "ecf3171f9e193a70f5ffa2a004f22c04cda7a96aee8831acc4c17b4a1733da7b"
+    },
+    {
+      "path": "graphics/a32-reference/tools/mesa/air-integer-ubo.patch",
+      "origin": "HakiOS A32 reference, original notices retained",
+      "sha256": "7671b4d7793cfa87cab2e5e3889e4d38faf6b498324d21233bcc6c1fea958d31"
+    },
+    {
+      "path": "graphics/a32-reference/tools/mesa/hakios-drm/hakios.drm.c",
+      "origin": "HakiOS A32 reference, original notices retained",
+      "sha256": "053f855605031e232616690dd7f41b39fe832bd165379f608d03f58865ab49cd"
+    },
+    {
+      "path": "graphics/a32-reference/tools/mesa/hakios-drm/xf86drm.h",
+      "origin": "HakiOS A32 reference, original notices retained",
+      "sha256": "707375298b19c954ca7786b257905fc29f167c5f14ef9c713bc2bc06be725e24"
+    },
+    {
+      "path": "graphics/a32-reference/LICENSE",
+      "origin": "HakiOS A32 reference, original notices retained",
+      "sha256": "5d31745b8383e163528ac4f87a1af4cbb9f3854ee71d03c69f32919f437db244"
+    },
+    {
+      "path": "tools/xnu-run-safe.sh",
+      "origin": "A21s USB-disconnect launch gate",
+      "sha256": "ffd968e30670d52ea7e0165607e8cb8475d35aee69f80aeb590277e0df903523"
+    }
+  ],
+  "excluded": [
+    {
+      "path": "kernel/README.uk.md",
+      "reason": "English-only publication"
+    },
+    {
+      "path": "kernel/README.zh.md",
+      "reason": "English-only publication"
+    },
+    {
+      "path": "kernel/drivers/.DS_Store",
+      "reason": "Local file metadata"
+    },
+    {
+      "path": "kernel/drivers/input/hakios.focaltech_fw.h",
+      "reason": "Vendor firmware blob"
+    },
+    {
+      "path": "kernel/prebuilt/SHA256SUMS",
+      "reason": "Build output; source is included"
+    },
+    {
+      "path": "kernel/prebuilt/hakios-kernel",
+      "reason": "Build output; source is included"
+    },
+    {
+      "path": "kernel/prebuilt/loader.efi",
+      "reason": "Build output; source is included"
+    },
+    {
+      "path": "kernel/prebuilt/userland/HakiosAudio",
+      "reason": "Build output; source is included"
+    },
+    {
+      "path": "kernel/prebuilt/userland/child",
+      "reason": "Build output; source is included"
+    },
+    {
+      "path": "kernel/prebuilt/userland/cpu_test",
+      "reason": "Build output; source is included"
+    },
+    {
+      "path": "kernel/prebuilt/userland/hello",
+      "reason": "Build output; source is included"
+    },
+    {
+      "path": "kernel/prebuilt/userland/hello_dyn",
+      "reason": "Build output; source is included"
+    },
+    {
+      "path": "kernel/prebuilt/userland/init",
+      "reason": "Build output; source is included"
+    },
+    {
+      "path": "kernel/prebuilt/userland/libhakios.app.dylib",
+      "reason": "Build output; source is included"
+    },
+    {
+      "path": "kernel/prebuilt/userland/libhakios.dylib",
+      "reason": "Build output; source is included"
+    },
+    {
+      "path": "kernel/prebuilt/userland/libhakios.media.dylib",
+      "reason": "Build output; source is included"
+    },
+    {
+      "path": "kernel/prebuilt/userland/libhakios.sb.dylib",
+      "reason": "Build output; source is included"
+    },
+    {
+      "path": "kernel/prebuilt/userland/libhakios.tweaks.dylib",
+      "reason": "Build output; source is included"
+    },
+    {
+      "path": "kernel/prebuilt/userland/mg_test",
+      "reason": "Build output; source is included"
+    },
+    {
+      "path": "kernel/prebuilt/userland/net_test",
+      "reason": "Build output; source is included"
+    },
+    {
+      "path": "kernel/prebuilt/userland/rwtouch",
+      "reason": "Build output; source is included"
+    },
+    {
+      "path": "kernel/prebuilt/userland/sound_test",
+      "reason": "Build output; source is included"
+    },
+    {
+      "path": "kernel/prebuilt/userland/stage0",
+      "reason": "Build output; source is included"
+    },
+    {
+      "path": "kernel/prebuilt/userland/surf_test",
+      "reason": "Build output; source is included"
+    },
+    {
+      "path": "kernel/prebuilt/userland/svc_test",
+      "reason": "Build output; source is included"
+    },
+    {
+      "path": "kernel/tools/.DS_Store",
+      "reason": "Local file metadata"
+    },
+    {
+      "path": "kernel/userland/src/HakiosMetalCA.m",
+      "reason": "Unmodified unrelated Adreno plugin; upstream marks license unresolved"
+    },
+    {
+      "path": "kernel/docs/ru/notes.md",
+      "reason": "Unrelated Russian upstream historical notes; English-only publication"
+    }
+  ],
+  "note": "Source snapshot; original working-tree changes and index were not modified. Publication edits are documented separately.",
+  "publication_edits": [
+    "English consolidated historical notes and current status",
+    "Regenerated XNU patch from the compiled tree",
+    "Optional local FocalTech header guard, firmware blob excluded",
+    "Regenerated complete boot-argument catalogue",
+    "Complete tested Mesa/Panfrost delta and portable build scripts"
+  ]
+}
